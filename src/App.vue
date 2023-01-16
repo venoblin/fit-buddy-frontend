@@ -12,13 +12,9 @@ export default {
   components: {
     NavBar
   },
-  data() {
-    const routine = useRoutineStore()
-
-    return {
-      routine
-    }
-  }
+  data: () => ({
+    routine: useRoutineStore()
+  })
 }
 </script>
 
@@ -30,5 +26,10 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+label {
+  position: absolute;
+  left: 999999px;
 }
 </style>

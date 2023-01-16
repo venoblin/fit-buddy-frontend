@@ -7,13 +7,9 @@ import { getTodaysDate } from '@/utils';
 
 export default {
   name: 'TodaysDate',
-  data() {
-    const today = getTodaysDate()
-
-    return {
-      today
-    }
-  }
+  data: () => ({
+    today: getTodaysDate()
+  })
 }
 
 </script>

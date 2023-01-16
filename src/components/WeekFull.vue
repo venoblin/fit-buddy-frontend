@@ -13,13 +13,9 @@ export default {
   components: {
     WeekDay
   },
-  data() {
-    const days = daysArr
-
-    return {
-      days
-    }
-  }
+  data: () => ({
+    days: daysArr
+  })
 }
 
 </script>

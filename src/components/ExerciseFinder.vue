@@ -1,5 +1,18 @@
 <template>
   <h1>Exercise Finder</h1>
+  
+  <form>
+    <label for="search">Search</label>
+    <input 
+    type="search"
+    name="search"
+    id="search"
+    placeholder="Search by name"
+    :value="searchQuery"
+    @input="changeHandler"
+    />
+    <button>SEARCH</button>
+  </form>
 
   <div class="type-container">
     <TypeCard 
@@ -18,11 +31,13 @@ export default {
   components: {
     TypeCard
   },
-  data() {
-    const types = typesArr
-
-    return {
-      types
+  data: () => ({
+    types: typesArr,
+    searchQuery: ''
+  }),
+  methods: {
+    changeHandler(evt) {
+      this.searchQuery = evt.target.value
     }
   }
 }

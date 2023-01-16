@@ -11,12 +11,11 @@ export default {
   components: {
     ExerciseFinder
   },
-  data() {
-    const day = this.$route.params.day
-
-    return {
-      day
-    }
+  data: () => ({
+    day: null
+  }),
+  mounted: function() {
+    this.day = this.$route.params.day
   }
 }
 </script>
