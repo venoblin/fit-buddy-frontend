@@ -3,10 +3,18 @@
 </template>
 
 <script>
+import { useRoutineStore } from './stores/routine';
 
 
 export default {
-  name: 'App'
+  name: 'App',
+  data() {
+    const routine = useRoutineStore()
+
+    return {
+      routine
+    }
+  }
 }
 </script>
 
