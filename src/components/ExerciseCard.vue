@@ -1,5 +1,12 @@
-<template></template>
+<template>
+  <h1>Exercise Card</h1>
+</template>
 
-<script></script>
+<script>
+
+export default {
+  name: 'ExerciseCard'
+}
+</script>
 
 <style lang="scss" scoped></style>
