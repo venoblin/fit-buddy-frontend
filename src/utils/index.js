@@ -23,7 +23,7 @@ export const monthsArr = [
   'december'
 ]
 
-export const musclesArr = [
+export const typesArr = [
   'abdominals',
   'abductors',
   'adductors',
