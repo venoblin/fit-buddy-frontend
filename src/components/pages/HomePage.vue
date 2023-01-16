@@ -2,6 +2,11 @@
   <h1>Homepage</h1>
 </template>
 
-<script></script>
+<script>
+
+export default {
+  name: 'HomePage'
+}
+</script>
 
 <style lang="scss" scoped></style>

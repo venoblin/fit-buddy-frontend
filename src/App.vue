@@ -1,14 +1,17 @@
 <template>
-  <div>NAVBAR</div>
+  <NavBar />
   <RouterView />
 </template>
 
 <script>
 import { useRoutineStore } from './stores/routine';
-
+import NavBar from './components/NavBar.vue';
 
 export default {
   name: 'App',
+  components: {
+    NavBar
+  },
   data() {
     const routine = useRoutineStore()
 
