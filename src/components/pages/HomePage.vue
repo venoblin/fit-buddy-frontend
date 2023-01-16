@@ -1,14 +1,16 @@
 <template>
-  <h1>Homepage</h1>
+  <TodaysDate />
   <WeekFull />
 </template>
 
 <script>
+import TodaysDate from '../TodaysDate.vue'
 import WeekFull from '../WeekFull.vue';
 
 export default {
   name: 'HomePage',
   components: {
+    TodaysDate,
     WeekFull
   }
 }
