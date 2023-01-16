@@ -18,12 +18,18 @@
     <TypeCard 
     v-for="typeName in types" 
     :key="typeName" 
-    :typeName="typeName" />
+    :typeName="typeName"
+    @click="typeClickHandler(typeName)" />
+  </div>
+
+  <div v-if="exercises">
+    <p v-for="e in exercises" :key="e.name">{{ e.name }}</p>
   </div>
 </template>
 
 <script>
 import { typesArr } from '@/utils';
+import { GetExercises } from '@/services/api';
 import TypeCard from './TypeCard.vue';
 
 export default {
@@ -33,11 +39,15 @@ export default {
   },
   data: () => ({
     types: typesArr,
-    searchQuery: ''
+    searchQuery: '',
+    exercises: null
   }),
   methods: {
     changeHandler(evt) {
       this.searchQuery = evt.target.value
+    },
+    async typeClickHandler(typeName) {
+      this.exercises = await GetExercises({muscle: typeName})
     }
   }
 }
