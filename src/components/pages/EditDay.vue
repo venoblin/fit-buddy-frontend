@@ -1,11 +1,18 @@
 <template>
-  <h1>Edit</h1>
+  <h1>{{ day }}</h1>
 </template>
 
 <script>
 
 export default {
-  name: 'EditDay'
+  name: 'EditVue',
+  data() {
+    const day = this.$route.params.day
+
+    return {
+      day
+    }
+  }
 }
 </script>
 
