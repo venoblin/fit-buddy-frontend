@@ -23,7 +23,7 @@ export default {
   props: ['day', 'isToday'],
   methods: {
     navigate(day) {
-      this.$router.push(`/edit/${day}`)
+      this.$router.push(`/edit/${day.name}`)
     }
   }
 }
