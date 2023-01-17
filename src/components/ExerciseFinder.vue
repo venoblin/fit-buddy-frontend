@@ -11,7 +11,8 @@
     :value="searchQuery"
     @input="changeHandler"
     />
-    <button>SEARCH</button>
+    
+    <button>Search</button>
   </form>
 
   <div class="type-container">
