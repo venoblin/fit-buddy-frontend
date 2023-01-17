@@ -1,5 +1,5 @@
 <template>
-  <div class="day">
+  <div :class="{day, today: isToday}">
     <p>{{ day.name }}</p>
 
     <div v-if="day.exercises.length">
@@ -20,7 +20,7 @@
 
 export default {
   name: 'WeekDay',
-  props: ['day'],
+  props: ['day', 'isToday'],
   methods: {
     navigate(day) {
       this.$router.push(`/edit/${day}`)
@@ -34,6 +34,10 @@ export default {
   position: relative;
   padding: 2rem;
   border: 1px solid black;
+
+  &.today {
+    background-color: darkgray;
+  }
 }
 
 button {

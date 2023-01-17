@@ -1,12 +1,13 @@
 <template>
   <div class="week">
-    <WeekDay v-for="day in routine" :key="day" :day="day" />
+    <WeekDay v-for="day in routine" :key="day" :day="day" :isToday="day.name === todaysDay" />
   </div>
+
 </template>
 
 <script>
 import { useRoutineStore } from '../stores/routine';
-
+import { getTodaysDate } from '@/utils';
 import WeekDay from './WeekDay.vue';
 
 export default {
@@ -15,7 +16,8 @@ export default {
     WeekDay
   },
   data: () => ({
-    routine: useRoutineStore().routineArr
+    routine: useRoutineStore().routineArr,
+    todaysDay: getTodaysDate().dayName
   })
 }
 
