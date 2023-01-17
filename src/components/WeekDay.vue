@@ -31,7 +31,16 @@ export default {
 
 <style lang="scss" scoped>
 .day {
+  position: relative;
   padding: 2rem;
   border: 1px solid black;
+}
+
+button {
+  position: absolute;
+  margin: 0 auto;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 </style>
