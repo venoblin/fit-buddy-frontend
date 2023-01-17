@@ -1,7 +1,7 @@
 <template>
   <h1>Exercise Finder</h1>
   
-  <form>
+  <form @submit="searchHandler">
     <label for="search">Search</label>
     <input 
     type="search"
@@ -45,6 +45,10 @@ export default {
   methods: {
     changeHandler(evt) {
       this.searchQuery = evt.target.value
+    },
+    async searchHandler(evt) {
+      evt.preventDefault()
+      this.exercises = await GetExercises({name: this.searchQuery})
     },
     async typeClickHandler(typeName) {
       this.exercises = await GetExercises({muscle: typeName})
