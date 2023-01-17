@@ -1,6 +1,12 @@
 <template>
   <div class="day">
-    <p>{{ day }}</p>
+    <p>{{ day.name }}</p>
+
+    <div v-if="day.exercises.length">
+      <div class="exercise" v-for="e in day.exercises" :key="e.name">
+        <p>{{ e.name }}</p>
+      </div>
+    </div>
     
     <button class="link" @click="navigate(day)">Edit</button>
   </div>

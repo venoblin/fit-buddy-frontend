@@ -1,12 +1,4 @@
-export const daysArr = [
-  'sunday',
-  'monday',
-  'tuesday',
-  'wednesday',
-  'thursday',
-  'friday',
-  'saturday'
-]
+export const daysArr = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat']
 
 export const monthsArr = [
   'january',

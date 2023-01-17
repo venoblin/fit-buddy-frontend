@@ -1,12 +1,13 @@
 <template>
   <div class="week">
-    <WeekDay v-for="day in days" :key="day" :day="day" />
+    <WeekDay v-for="day in routine" :key="day" :day="day" />
   </div>
 </template>
 
 <script>
+import { useRoutineStore } from '../stores/routine';
+
 import WeekDay from './WeekDay.vue';
-import { daysArr } from '@/utils';
 
 export default {
   name: 'WeekFull',
@@ -14,7 +15,7 @@ export default {
     WeekDay
   },
   data: () => ({
-    days: daysArr
+    routine: useRoutineStore().routineArr
   })
 }
 

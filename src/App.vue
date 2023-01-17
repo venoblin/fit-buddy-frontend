@@ -4,17 +4,13 @@
 </template>
 
 <script>
-import { useRoutineStore } from './stores/routine';
 import NavBar from './components/NavBar.vue';
 
 export default {
   name: 'App',
   components: {
     NavBar
-  },
-  data: () => ({
-    routine: useRoutineStore()
-  })
+  }
 }
 </script>
 
