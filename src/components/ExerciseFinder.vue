@@ -23,7 +23,10 @@
   </div>
 
   <div v-if="exercises">
-    <p v-for="e in exercises" :key="e.name">{{ e.name }}</p>
+    <ExerciseCard 
+    v-for="e in exercises" 
+    :key="e.name" 
+    :exercise="e" />
   </div>
 </template>
 
@@ -31,11 +34,13 @@
 import { typesArr } from '@/utils';
 import { GetExercises } from '@/services/api';
 import TypeCard from './TypeCard.vue';
+import ExerciseCard from './ExerciseCard.vue';
 
 export default {
   name: 'ExerciseFinder',
   components: {
-    TypeCard
+    TypeCard,
+    ExerciseCard
   },
   data: () => ({
     types: typesArr,
@@ -49,6 +54,7 @@ export default {
     async searchHandler(evt) {
       evt.preventDefault()
       this.exercises = await GetExercises({name: this.searchQuery})
+      this.searchQuery = ''
     },
     async typeClickHandler(typeName) {
       this.exercises = await GetExercises({muscle: typeName})
