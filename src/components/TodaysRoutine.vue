@@ -1,7 +1,7 @@
 <template>
   <div class="dashboard">
     <h1>Welcome {{ user }}!</h1>
-    <h2>Todays routine:</h2>
+    <h2>Todays Routine:</h2>
     
     <div v-if="todaysExercises">
       <div v-for="e in todaysExercises" :key="e.name">
