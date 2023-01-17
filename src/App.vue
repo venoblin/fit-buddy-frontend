@@ -52,4 +52,8 @@ label {
     color: red;
   }
 }
+
+button {
+  cursor: pointer;
+}
 </style>
