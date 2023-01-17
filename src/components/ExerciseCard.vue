@@ -27,8 +27,9 @@ export default {
 
 <style lang="scss" scoped>
 .exercise-card {
+  max-width: 500px;
   padding: 1rem;
-  margin: 1rem 0;
+  margin: 1rem auto;
   background-color: darkgray;
 }
 </style>

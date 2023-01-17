@@ -1,6 +1,6 @@
 <template>
   <nav>
-    <p>FitBuddy</p>
+    <RouterLink class="link" to="/">FitBuddy</RouterLink>
 
     <div class="links">
       <p>Link</p>

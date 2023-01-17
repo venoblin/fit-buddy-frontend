@@ -1,6 +1,8 @@
 <template>
   <h1>{{ day }}</h1>
-  <ExerciseFinder />
+
+  <button @click="clickHandler">Add Exercises</button>
+  <ExerciseFinder v-if="findMode" />
 </template>
 
 <script>
@@ -12,8 +14,14 @@ export default {
     ExerciseFinder
   },
   data: () => ({
-    day: null
+    day: null,
+    findMode: false
   }),
+  methods: {
+    clickHandler() {
+      this.findMode = !this.findMode
+    }
+  },
   mounted: function() {
     this.day = this.$route.params.day
   }

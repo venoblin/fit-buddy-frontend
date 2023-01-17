@@ -66,7 +66,10 @@ export default {
 <style lang="scss" scoped>
 
 .type-container {
+  max-width: 800px;
+  margin: 1rem auto;
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
 }
 </style>

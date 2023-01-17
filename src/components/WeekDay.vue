@@ -2,7 +2,7 @@
   <div class="day">
     <p>{{ day }}</p>
     
-    <p @click="navigate(day)">Edit</p>
+    <button class="link" @click="navigate(day)">Edit</button>
   </div>
 </template>
 
