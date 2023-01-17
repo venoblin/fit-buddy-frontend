@@ -7,6 +7,10 @@
         <p>{{ e.name }}</p>
       </div>
     </div>
+
+    <div v-else>
+      <p>Rest Day</p>
+    </div>
     
     <button class="link" @click="navigate(day)">Edit</button>
   </div>
