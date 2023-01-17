@@ -32,7 +32,20 @@ export const useRoutineStore = defineStore('routine', {
       },
       {
         name: 'tue',
-        exercises: []
+        exercises: [
+          {
+            name: 'squats',
+            muscle: 'legs',
+            equipment: 'dumbells',
+            instructions: 'NA'
+          },
+          {
+            name: 'calf raises',
+            muscle: 'calfs',
+            equipment: 'dumbells',
+            instructions: 'NA'
+          }
+        ]
       },
       {
         name: 'wed',

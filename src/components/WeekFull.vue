@@ -3,6 +3,17 @@
     <WeekDay v-for="day in routine" :key="day" :day="day" :isToday="day.name === todaysDay" />
   </div>
 
+  <div class="dashboard">
+    <div v-if="todaysExercises">
+      <div v-for="e in todaysExercises" :key="e.name">
+        <p>{{ e.name }}</p>
+      </div>
+    </div>
+
+    <div v-else>
+      <p>Rest Day</p>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -17,8 +28,12 @@ export default {
   },
   data: () => ({
     routine: useRoutineStore().routineArr,
-    todaysDay: getTodaysDate().dayName
-  })
+    todaysDay: getTodaysDate().dayName,
+    todaysExercises: null
+  }),
+  mounted: function(){
+    this.todaysExercises = this.routine[getTodaysDate().dayIndex].exercises
+  }
 }
 
 </script>
