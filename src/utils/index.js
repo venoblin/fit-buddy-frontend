@@ -53,3 +53,7 @@ export const getTodaysDate = () => {
 
   return todaysDate
 }
+
+export const getIndexOfDay = (dayName) => {
+  return daysArr.indexOf(dayName)
+}

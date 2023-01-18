@@ -14,19 +14,28 @@ export const useRoutineStore = defineStore('routine', {
             name: 'bench press',
             muscle: 'chest',
             equipment: 'bench',
-            instructions: 'NA'
+            instructions: 'NA',
+            sets: 4,
+            reps: 4,
+            weight: 50
           },
           {
             name: 'curls',
             muscle: 'bicep',
             equipment: 'dumbells',
-            instructions: 'NA'
+            instructions: 'NA',
+            sets: 4,
+            reps: 4,
+            weight: 50
           },
           {
             name: 'pulldowns',
             muscle: 'ticeps',
             equipment: 'cable machine',
-            instructions: 'NA'
+            instructions: 'NA',
+            sets: 4,
+            reps: 4,
+            weight: 50
           }
         ]
       },
@@ -37,13 +46,19 @@ export const useRoutineStore = defineStore('routine', {
             name: 'squats',
             muscle: 'legs',
             equipment: 'dumbells',
-            instructions: 'NA'
+            instructions: 'NA',
+            sets: 4,
+            reps: 4,
+            weight: 50
           },
           {
             name: 'calf raises',
             muscle: 'calfs',
             equipment: 'dumbells',
-            instructions: 'NA'
+            instructions: 'NA',
+            sets: 4,
+            reps: 4,
+            weight: 50
           }
         ]
       },
@@ -54,19 +69,28 @@ export const useRoutineStore = defineStore('routine', {
             name: 'shoulder shrugs',
             muscle: 'traps',
             equipment: 'dumbells',
-            instructions: 'NA'
+            instructions: 'NA',
+            sets: 4,
+            reps: 4,
+            weight: 50
           },
           {
             name: 'lat pulls',
             muscle: 'lats',
             equipment: 'cable machine',
-            instructions: 'NA'
+            instructions: 'NA',
+            sets: 4,
+            reps: 4,
+            weight: 50
           },
           {
             name: 'shoulder press',
             muscle: 'shoulder',
             equipment: 'dumbells',
-            instructions: 'NA'
+            instructions: 'NA',
+            sets: 4,
+            reps: 4,
+            weight: 50
           }
         ]
       },

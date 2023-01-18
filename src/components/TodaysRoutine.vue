@@ -3,9 +3,9 @@
     <h1>Welcome {{ user }}!</h1>
     <h2>Todays Routine:</h2>
     
-    <div v-if="todaysExercises">
+    <div v-if="todaysExercises.length">
       <div v-for="e in todaysExercises" :key="e.name">
-        <p>{{ e.name }}</p>
+        <p>{{ e.name }} -> {{ e.sets }} sets | {{ e.reps }} reps @ {{ e.weight }}LBS</p>
       </div>
     </div>
 
@@ -24,7 +24,7 @@ export default {
   data: () => ({
     routine: useRoutineStore().routineArr,
     user: window.localStorage.getItem('user'),
-    todaysExercises: null
+    todaysExercises: []
   }),
   mounted: function(){
     this.todaysExercises = this.routine[getTodaysDate().dayIndex].exercises
