@@ -82,22 +82,23 @@ export default {
 <style lang="scss" scoped>
 
 .finder {
+  width: 700px;
   position: absolute;
   margin: 0 auto;
   bottom: 0;
   left: 0;
-  right: 0;
   transform: translateX(-2000px);
   background-color: darkslategray;
   transition: transform 0.3s ease;
 
   &.show {
+    right: 0;
     transform: translateX(0);
   }
 }
 
 .exercises {
-  height: 400px;
+  height: 300px;
   overflow-y: auto;
 }
 
