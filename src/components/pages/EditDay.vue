@@ -13,8 +13,7 @@
     </div>
   </div>
 
-  <button @click="clickHandler">Add Exercises</button>
-  <ExerciseFinder v-if="findMode" />
+  <ExerciseFinder />
 </template>
 
 <script>
@@ -29,15 +28,9 @@ export default {
   },
   data: () => ({
     day: null,
-    findMode: false,
     routine: useRoutineStore().routineArr,
     daysExercises: []
   }),
-  methods: {
-    clickHandler() {
-      this.findMode = !this.findMode
-    }
-  },
   mounted: function() {
     this.day = this.$route.params.day
     this.daysExercises = this.routine[getIndexOfDay(this.$route.params.day)].exercises

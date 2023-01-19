@@ -1,33 +1,39 @@
 <template>
-  <h1>Exercise Finder</h1>
+  <button v-if="!findMode" @click="findOpenHandler">Add Exercises</button>
   
-  <form @submit="searchHandler">
-    <label for="search">Search</label>
-    <input 
-    type="search"
-    name="search"
-    id="search"
-    placeholder="Search by name"
-    :value="searchQuery"
-    @input="changeHandler"
-    />
+  <div class="finder" ref="finder">
+    <button @click="findCloseHandler">X</button>
     
-    <button>Search</button>
-  </form>
+    <h1>Exercise Finder</h1>
+  
+    <form @submit="searchHandler">
+      <label for="search">Search</label>
+      <input 
+      type="search"
+      name="search"
+      id="search"
+      placeholder="Search by name"
+      :value="searchQuery"
+      @input="changeHandler"
+      />
+    
+      <button>Search</button>
+    </form>
 
-  <div class="type-container">
-    <TypeCard 
-    v-for="typeName in types" 
-    :key="typeName" 
-    :typeName="typeName"
-    @click="typeClickHandler(typeName)" />
-  </div>
+    <div class="type-container">
+      <TypeCard 
+      v-for="typeName in types" 
+      :key="typeName" 
+      :typeName="typeName"
+      @click="typeClickHandler(typeName)" />
+    </div>
 
-  <div v-if="exercises">
-    <ExerciseCard 
-    v-for="e in exercises" 
-    :key="e.name" 
-    :exercise="e" />
+    <div v-if="exercises" class="exercises">
+      <ExerciseCard 
+      v-for="e in exercises" 
+      :key="e.name" 
+      :exercise="e" />
+    </div>
   </div>
 </template>
 
@@ -46,9 +52,18 @@ export default {
   data: () => ({
     types: typesArr,
     searchQuery: '',
-    exercises: null
+    exercises: null,
+    findMode: false
   }),
   methods: {
+    findOpenHandler() {
+      this.$refs.finder.classList.toggle('show')
+      this.findMode = true
+    },
+    findCloseHandler() {
+      this.$refs.finder.classList.toggle('show')
+      this.findMode = false
+    },
     changeHandler(evt) {
       this.searchQuery = evt.target.value
     },
@@ -65,6 +80,26 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+.finder {
+  position: absolute;
+  margin: 0 auto;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transform: translateX(-2000px);
+  background-color: darkslategray;
+  transition: transform 0.3s ease;
+
+  &.show {
+    transform: translateX(0);
+  }
+}
+
+.exercises {
+  height: 400px;
+  overflow-y: auto;
+}
 
 .type-container {
   max-width: 800px;
