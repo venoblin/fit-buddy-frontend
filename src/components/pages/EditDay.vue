@@ -5,6 +5,8 @@
     <div v-if="daysExercises.length">
       <div v-for="e in daysExercises" :key="e.name">
         <p>{{ e.name }} -> {{ e.sets }} sets | {{ e.reps }} reps @ {{ e.weight }}LBS</p>
+
+        <button @click="deleteExercise(e)">Delete</button>
       </div>
     </div>
 
@@ -31,6 +33,11 @@ export default {
     routine: useRoutineStore().routineArr,
     daysExercises: []
   }),
+  methods: {
+    deleteExercise(e) {
+      useRoutineStore().removeExercise(this.day, e)
+    }
+  },
   mounted: function() {
     this.day = this.$route.params.day
     this.daysExercises = this.routine[getIndexOfDay(this.$route.params.day)].exercises
