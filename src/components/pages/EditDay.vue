@@ -3,11 +3,12 @@
 
   <div>
     <div v-if="daysExercises.length">
-      <div v-for="e in daysExercises" :key="e.name">
-        <p>{{ e.name }} -> {{ e.sets }} sets | {{ e.reps }} reps @ {{ e.weight }}LBS</p>
-
-        <button @click="deleteExercise(e)">Delete</button>
-      </div>
+      <DayExercise
+      v-for="e in daysExercises"
+      :key="e.id"
+      :exercise="e"
+      :editMode="true"
+      />
     </div>
 
     <div v-else>
@@ -21,11 +22,13 @@
 <script>
 import { useRoutineStore } from '@/stores/routine';
 import { getIndexOfDay } from '@/utils';
+import DayExercise from '../DayExercise.vue';
 import ExerciseFinder from '../ExerciseFinder.vue';
 
 export default {
   name: 'EditVue',
   components: {
+    DayExercise,
     ExerciseFinder
   },
   data: () => ({
@@ -33,11 +36,6 @@ export default {
     routine: useRoutineStore().routineArr,
     daysExercises: []
   }),
-  methods: {
-    deleteExercise(e) {
-      useRoutineStore().removeExercise(this.day, e)
-    }
-  },
   mounted: function() {
     this.day = this.$route.params.day
     this.daysExercises = this.routine[getIndexOfDay(this.$route.params.day)].exercises
