@@ -50,6 +50,7 @@
 
 <script>
 import { useRoutineStore } from '@/stores/routine'
+import { v4 as uuid } from 'uuid'
 
 export default {
   name: 'ExerciseCard',
@@ -74,6 +75,7 @@ export default {
       evt.preventDefault()
 
       const e = {
+        id: uuid(),
         name: this.exercise.name,
         muscle: this.exercise.muscle,
         equipment: this.exercise.equipment,
