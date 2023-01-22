@@ -17,6 +17,7 @@ export default {
 .type-card {
   padding: 0.25rem 0.75rem;
   border-radius: 2rem;
+  cursor: pointer;
   background-color: grey;
 }
 </style>
