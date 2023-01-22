@@ -2,7 +2,7 @@
   <h1>Enter Your Name</h1>
   
   <form @submit="submitHandler">
-    <label for="user">Enter Your Name</label>
+    <label class="hide" for="user">Enter Your Name</label>
     <input 
     type="text"
     name="user"

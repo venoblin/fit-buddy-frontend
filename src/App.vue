@@ -32,7 +32,7 @@ body {
   margin-top: 60px;
 }
 
-label {
+.hide {
   position: absolute;
   left: 999999px;
 }
