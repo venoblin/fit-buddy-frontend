@@ -32,6 +32,7 @@ export default {
       evt.preventDefault
 
       window.localStorage.setItem('user', this.user)
+      this.$router.push('/')
     }
   }
 }
