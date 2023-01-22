@@ -1,11 +1,20 @@
 <template>
   <div class="exercise-card">
+    <button @click="clickAddHandler">Toggle Add Mode</button>
+    
     <p class="name">{{ exercise.name }}</p>
-    <p class="muscle">Muscle: {{ exercise.muscle }}</p>
-    <p class="equipment">Equipment: {{ exercise.equipment }}</p>
 
-    <button @click="clickHandler">Toggle Instructions</button>
-    <p v-if="showInstructions" class="instructions">{{ exercise.instructions }}</p>
+    <div v-if="addMode">
+      ADD
+    </div>
+    
+    <div v-else>
+      <p class="muscle">Muscle: {{ exercise.muscle }}</p>
+      <p class="equipment">Equipment: {{ exercise.equipment }}</p>
+
+      <button @click="clickInstHandler">Toggle Instructions</button>
+      <p v-if="showInstructions" class="instructions">{{ exercise.instructions }}</p>
+    </div>
   </div>
 </template>
 
@@ -15,12 +24,21 @@ export default {
   name: 'ExerciseCard',
   props: ['exercise'],
   data: () => ({
-    showInstructions: false
+    day: null,
+    showInstructions: false,
+    addMode: false
   }),
   methods: {
-    clickHandler() {
+    clickInstHandler() {
       this.showInstructions = !this.showInstructions
+    },
+    clickAddHandler() {
+      this.addMode = !this.addMode
+      if (this.showInstructions) this.showInstructions = false
     }
+  },
+  mounted: function() {
+    this.day = this.$route.params.day
   }
 }
 </script>
