@@ -32,7 +32,8 @@
       <ExerciseCard 
       v-for="e in exercises" 
       :key="e.name" 
-      :exercise="e" />
+      :exercise="e"
+      :closeFinder="findCloseHandler" />
     </div>
   </div>
 </template>

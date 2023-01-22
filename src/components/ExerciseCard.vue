@@ -53,7 +53,7 @@ import { useRoutineStore } from '@/stores/routine'
 
 export default {
   name: 'ExerciseCard',
-  props: ['exercise'],
+  props: ['exercise', 'closeFinder'],
   data: () => ({
     day: null,
     showInstructions: false,
@@ -84,6 +84,7 @@ export default {
       }
 
       useRoutineStore().addExercise(this.day, e)
+      this.closeFinder()
     },
     handleChange(evt) {
       const target = evt.target
