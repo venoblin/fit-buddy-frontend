@@ -33,7 +33,7 @@
       v-for="e in exercises" 
       :key="e.name" 
       :exercise="e"
-      :closeFinder="findCloseHandler" />
+      :resetExercises="resetExercises" />
     </div>
   </div>
 </template>
@@ -64,6 +64,9 @@ export default {
     findCloseHandler() {
       this.$refs.finder.classList.toggle('show')
       this.findMode = false
+      this.exercises = null
+    },
+    resetExercises() {
       this.exercises = null
     },
     changeHandler(evt) {

@@ -54,7 +54,7 @@ import { v4 as uuid } from 'uuid'
 
 export default {
   name: 'ExerciseCard',
-  props: ['exercise', 'closeFinder'],
+  props: ['exercise', 'resetExercises'],
   data: () => ({
     day: null,
     showInstructions: false,
@@ -86,7 +86,7 @@ export default {
       }
 
       useRoutineStore().addExercise(this.day, e)
-      this.closeFinder()
+      this.resetExercises()
     },
     handleChange(evt) {
       const target = evt.target
