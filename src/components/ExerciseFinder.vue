@@ -64,6 +64,7 @@ export default {
     findCloseHandler() {
       this.$refs.finder.classList.toggle('show')
       this.findMode = false
+      this.exercises = null
     },
     changeHandler(evt) {
       this.searchQuery = evt.target.value
