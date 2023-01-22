@@ -7,16 +7,10 @@
 </template>
 
 <script>
-import { useRoutineStore } from '@/stores/routine';
 
 export default {
   name: 'DayExercise',
-  props: ['editMode', 'exercise'],
-  methods: {
-    deleteExercise(e) {
-      useRoutineStore().removeExercise(this.day, e)
-    }
-  }
+  props: ['editMode', 'exercise', 'deleteExercise']
 }
 </script>
 

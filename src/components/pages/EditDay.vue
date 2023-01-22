@@ -8,6 +8,7 @@
       :key="e.id"
       :exercise="e"
       :editMode="true"
+      :deleteExercise="deleteExercise"
       />
     </div>
 
@@ -36,9 +37,18 @@ export default {
     routine: useRoutineStore().routineArr,
     daysExercises: []
   }),
+  methods: {
+    getTodaysExercises() {
+      this.daysExercises = this.routine[getIndexOfDay(this.$route.params.day)].exercises
+    },
+    deleteExercise(e) {
+      useRoutineStore().removeExercise(this.$route.params.day, e)
+      this.getTodaysExercises()
+    }
+  },
   mounted: function() {
     this.day = this.$route.params.day
-    this.daysExercises = this.routine[getIndexOfDay(this.$route.params.day)].exercises
+    this.getTodaysExercises()
   }
 }
 </script>
