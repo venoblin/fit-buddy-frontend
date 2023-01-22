@@ -5,7 +5,7 @@
     <p class="name">{{ exercise.name }}</p>
 
     <div v-if="addMode">
-      <form>
+      <form @submit="submitHandler">
         <label for="sets">Sets</label>
         <input 
         type="number"
@@ -49,6 +49,7 @@
 </template>
 
 <script>
+import { useRoutineStore } from '@/stores/routine'
 
 export default {
   name: 'ExerciseCard',
@@ -68,6 +69,21 @@ export default {
     clickAddHandler() {
       this.addMode = !this.addMode
       if (this.showInstructions) this.showInstructions = false
+    },
+    submitHandler(evt) {
+      evt.preventDefault()
+
+      const e = {
+        name: this.exercise.name,
+        muscle: this.exercise.muscle,
+        equipment: this.exercise.equipment,
+        instructions: this.exercise.instructions,
+        sets: this.sets,
+        reps: this.reps,
+        weight: this.weight
+      }
+
+      useRoutineStore().addExercise(this.day, e)
     },
     handleChange(evt) {
       const target = evt.target
