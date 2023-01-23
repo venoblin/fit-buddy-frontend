@@ -5,7 +5,21 @@
     <p class="name">{{ exercise.name }}</p>
 
     <div v-if="addMode">
-      <form @submit="submitHandler">
+      <form v-if="exercise.type === 'cardio'" @submit="submitHandler">
+        <label for="duration">Duration(minutes)</label>
+        <input 
+        type="number"
+        name="duration"
+        id="duration"
+        min="1"
+        :value="duration"
+        @change="handleChange"
+        />
+
+        <button>Add</button>
+      </form>
+
+      <form v-else @submit="submitHandler">
         <label for="sets">Sets</label>
         <input 
         type="number"
@@ -61,7 +75,8 @@ export default {
     addMode: false,
     sets: 1,
     reps: 1,
-    weight: 10
+    weight: 10,
+    duration: 15
   }),
   methods: {
     clickInstHandler() {
@@ -74,16 +89,32 @@ export default {
     submitHandler(evt) {
       evt.preventDefault()
 
-      const e = {
-        id: uuid(),
-        name: this.exercise.name,
-        muscle: this.exercise.muscle,
-        equipment: this.exercise.equipment,
-        instructions: this.exercise.instructions,
-        sets: this.sets,
-        reps: this.reps,
-        weight: this.weight
+      let e = null
+      if (this.exercise.type === 'cardio') {
+        e = {
+          id: uuid(),
+          name: this.exercise.name,
+          type: this.exercise.type,
+          muscle: this.exercise.muscle,
+          equipment: this.exercise.equipment,
+          instructions: this.exercise.instructions,
+          duration: this.duration
+        }
+      } else {
+        e = {
+          id: uuid(),
+          name: this.exercise.name,
+          type: this.exercise.type,
+          muscle: this.exercise.muscle,
+          equipment: this.exercise.equipment,
+          instructions: this.exercise.instructions,
+          sets: this.sets,
+          reps: this.reps,
+          weight: this.weight
+        }
       }
+
+      
 
       useRoutineStore().addExercise(this.day, e)
       this.resetExercises()
