@@ -1,7 +1,18 @@
 <template>
-  <div>
-    <p v-if="exercise.type === 'cardio'">{{ exercise.name }} -> {{ exercise.duration }} mins</p>
-    <p v-else>{{ exercise.name }} -> {{ exercise.sets }} sets | {{ exercise.reps }} reps @ {{ exercise.weight }}LBS</p>
+  <div class="day-exercise">
+    <div class="top">
+      <p v-if="exercise.type === 'cardio'">{{ exercise.name }} -> {{ exercise.duration }} mins</p>
+      <p v-else>{{ exercise.name }} -> {{ exercise.sets }} sets | {{ exercise.reps }} reps @ {{ exercise.weight }}LBS</p>
+    
+      <div class="inputs" v-if="editMode && !showForm">
+        <button @click="toggleEdit">Edit</button>
+        <button @click="deleteExercise(exercise)">Delete</button>
+      </div>
+    
+      <div class="inputs" v-if="!editMode">
+        <button @click="clickInstHandler">Toggle Instructions</button>
+      </div>
+    </div>
 
     <div v-if="showForm">
       <form v-if="exercise.type === 'cardio'" @submit="submitHandler">
@@ -51,16 +62,8 @@
       </form>
     </div>
 
-    <div v-if="editMode && !showForm">
-      <button @click="toggleEdit">Edit</button>
-      <button @click="deleteExercise(exercise)">Delete</button>
-    </div>
-
-    <div v-if="!editMode">
-      <button @click="clickInstHandler">Toggle Instructions</button>
-
-      <p v-if="showInstructions" class="instructions">{{ exercise.instructions }}</p>
-    </div>
+    <p v-if="showInstructions" class="instructions">{{ exercise.instructions }}</p>
+    
   </div>
 </template>
 
@@ -121,4 +124,20 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+
+.day-exercise {
+  border: 1px solid grey;
+  
+  .top {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    .inputs {
+      position: absolute;
+      right: 0;
+    }
+  }
+}
+</style>
