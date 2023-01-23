@@ -114,8 +114,6 @@ export default {
         }
       }
 
-      
-
       useRoutineStore().addExercise(this.day, e)
       this.resetExercises()
     },
