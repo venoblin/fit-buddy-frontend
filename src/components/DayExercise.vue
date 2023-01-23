@@ -15,7 +15,7 @@
         @change="handleChange"
         />
 
-        <button>Add</button>
+        <button>Save</button>
       </form>
 
       <form v-else @submit="submitHandler">
@@ -47,11 +47,11 @@
         @change="handleChange"
         />
 
-        <button>Add</button>
+        <button>Save</button>
       </form>
     </div>
 
-    <div v-if="editMode">
+    <div v-if="editMode && !showForm">
       <button @click="toggleEdit">Edit</button>
       <button @click="deleteExercise(exercise)">Delete</button>
     </div>
@@ -66,10 +66,10 @@ export default {
   props: ['editMode', 'exercise', 'deleteExercise', 'editExercise'],
   data: () => ({
     showForm: false,
-    sets: 1,
-    reps: 1,
-    weight: 10,
-    duration: 15
+    sets: null,
+    reps: null,
+    weight: null,
+    duration: null
   }),
   methods: {
     toggleEdit() {
@@ -92,10 +92,20 @@ export default {
       }
 
       useRoutineStore().editExercise(this.$route.params.day, this.exercise, update)
+      this.showForm = false
     },
     handleChange(evt) {
       const target = evt.target
       this[target.name] = target.value
+    }
+  },
+  mounted: function() {
+    if (this.exercise.type === 'cardio') {
+      this.duration = this.exercise.duration
+    } else {
+      this.sets = this.exercise.sets
+      this.reps = this.exercise.reps
+      this.weight = this.exercise.weight
     }
   }
 }
