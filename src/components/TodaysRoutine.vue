@@ -4,9 +4,12 @@
     <h2>Todays Routine:</h2>
     
     <div v-if="todaysExercises.length">
-      <div v-for="e in todaysExercises" :key="e.name">
-        <p>{{ e.name }} -> {{ e.sets }} sets | {{ e.reps }} reps @ {{ e.weight }}LBS</p>
-      </div>
+      <DayExercise
+      v-for="e in todaysExercises"
+      :key="e.id"
+      :exercise="e"
+      :editMode="false"
+      />
     </div>
 
     <div v-else>
@@ -18,9 +21,13 @@
 <script>
 import { useRoutineStore } from '../stores/routine';
 import { getTodaysDate } from '@/utils';
+import DayExercise from './DayExercise.vue';
 
 export default {
   name: 'TodaysRoutine',
+  components: {
+    DayExercise
+  },
   data: () => ({
     routine: useRoutineStore().routineArr,
     user: window.localStorage.getItem('user'),
