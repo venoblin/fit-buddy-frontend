@@ -55,6 +55,12 @@
       <button @click="toggleEdit">Edit</button>
       <button @click="deleteExercise(exercise)">Delete</button>
     </div>
+
+    <div v-if="!editMode">
+      <button @click="clickInstHandler">Toggle Instructions</button>
+
+      <p v-if="showInstructions" class="instructions">{{ exercise.instructions }}</p>
+    </div>
   </div>
 </template>
 
@@ -66,6 +72,7 @@ export default {
   props: ['editMode', 'exercise', 'deleteExercise', 'editExercise'],
   data: () => ({
     showForm: false,
+    showInstructions: false,
     sets: null,
     reps: null,
     weight: null,
@@ -74,6 +81,9 @@ export default {
   methods: {
     toggleEdit() {
       this.showForm = !this.showForm
+    },
+    clickInstHandler() {
+      this.showInstructions = !this.showInstructions
     },
     submitHandler(evt) {
       evt.preventDefault()
