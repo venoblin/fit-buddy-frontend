@@ -54,6 +54,17 @@ export const useRoutineStore = defineStore('routine', {
       }
 
       window.localStorage.setItem('routine', JSON.stringify(this.routineArr))
+    },
+    editExercise(dayName, e, update) {
+      for (let day of this.routineArr) {
+        if (day.name === dayName) {
+          for (let exercise of day.exercises) {
+            if (exercise.id === e.id) exercise = update
+          }
+        }
+      }
+
+      window.localStorage.setItem('routine', JSON.stringify(this.routineArr))
     }
   }
 })

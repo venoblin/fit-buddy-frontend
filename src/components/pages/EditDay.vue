@@ -9,6 +9,7 @@
       :exercise="e"
       :editMode="true"
       :deleteExercise="deleteExercise"
+      :editExercise="editExercise"
       />
     </div>
 
@@ -43,6 +44,10 @@ export default {
     },
     deleteExercise(e) {
       useRoutineStore().removeExercise(this.$route.params.day, e)
+      this.getTodaysExercises()
+    },
+    editExercise(e, update) {
+      useRoutineStore().editExercise(this.$route.params.day, e, update)
       this.getTodaysExercises()
     }
   },
