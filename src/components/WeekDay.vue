@@ -3,9 +3,7 @@
     <p>{{ day.name }}</p>
 
     <div v-if="day.exercises.length">
-      <div class="exercise" v-for="e in day.exercises" :key="e.name">
-        <p>{{ e.name }}</p>
-      </div>
+      <p>{{ day.exercises.length }}</p>
     </div>
 
     <div v-else>

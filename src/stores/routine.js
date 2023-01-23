@@ -59,7 +59,8 @@ export const useRoutineStore = defineStore('routine', {
       for (let day of this.routineArr) {
         if (day.name === dayName) {
           day.exercises.forEach((exercise, i) => {
-            day.exercises[i] = { ...exercise, ...update }
+            if (exercise.id === e.id)
+              day.exercises[i] = { ...exercise, ...update }
           })
         }
       }
