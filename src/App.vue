@@ -15,12 +15,16 @@ export default {
 </script>
 
 <style lang="scss">
+@import '@/assets/styles/global.scss';
+
 * {
   box-sizing: border-box;
 }
 
 body {
   overflow-x: hidden;
+  color: $darkBlue;
+  background-color: $white;
 }
 
 #app {
@@ -28,7 +32,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
   margin-top: 60px;
 }
 

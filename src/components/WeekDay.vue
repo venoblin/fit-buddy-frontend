@@ -1,8 +1,8 @@
 <template>
   <div :class="{day, today: isToday}" @click="navigate(day)">
-    <p>{{ day.name }}</p>
+    <p class="day-name">{{ day.name }}</p>
 
-    <div v-if="day.exercises.length">
+    <div class="counter" v-if="day.exercises.length">
       <p>{{ day.exercises.length }}</p>
     </div>
 
@@ -26,14 +26,41 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '@/assets/styles/global.scss';
 .day {
+  max-width: 100px;
   position: relative;
   padding: 2rem;
-  border: 1px solid black;
   cursor: pointer;
+  transition: all 0.3s ease;
 
+  .day-name {
+    border-bottom: 1px solid $darkBlue;
+  }
+
+  .counter {
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: $green;
+
+    p {
+      margin: 0;
+    }
+  }
   &.today {
-    background-color: darkgray;
+    background-color: $grey;
+  }
+
+  &:hover {
+    background-color: $darkBlue;
+    color: $white;
+
+    .day-name {
+      border-color: $white;
+    }
   }
 }
 </style>
