@@ -1,4 +1,6 @@
 <template>
+  <RouterLink to="/">Home</RouterLink>
+  
   <h1>{{ day }}</h1>
 
   <div>
