@@ -1,5 +1,5 @@
 <template>
-  <div class="week">
+  <div class="week capitalize">
     <WeekDay v-for="day in routine" :key="day" :day="day" :isToday="day.name === todaysDay" />
   </div>
 </template>
@@ -26,5 +26,14 @@ export default {
 .week {
   display: flex;
   justify-content: center;
+
+  .day {
+    &:first-child {
+      border-radius: 1rem 0 0 1rem;
+    }
+    &:last-child {
+      border-radius: 0 1rem 1rem 0;
+    }
+  }
 }
 </style>

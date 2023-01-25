@@ -1,7 +1,7 @@
 <template>
   <RouterLink to="/">Home</RouterLink>
   
-  <h1>{{ day }}</h1>
+  <h1 class="capitalize">{{ day }}</h1>
 
   <div>
     <div v-if="daysExercises.length">

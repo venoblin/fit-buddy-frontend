@@ -49,6 +49,10 @@ body {
   }
 }
 
+.capitalize {
+  text-transform: capitalize;
+}
+
 button {
   cursor: pointer;
 }

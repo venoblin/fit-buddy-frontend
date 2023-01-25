@@ -1,5 +1,5 @@
 <template>
-  <div class="day-exercise">
+  <div class="day-exercise capitalize">
     <div class="top">
       <p v-if="exercise.type === 'cardio'">{{ exercise.name }} -> {{ exercise.duration }} mins</p>
       <p v-else>{{ exercise.name }} -> {{ exercise.sets }} sets | {{ exercise.reps }} reps @ {{ exercise.weight }}LBS</p>
