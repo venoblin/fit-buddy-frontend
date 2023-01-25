@@ -45,6 +45,7 @@
         type="number"
         name="reps"
         id="reps"
+        min="1"
         :value="reps"
         @change="handleChange"
         />
@@ -54,6 +55,7 @@
         type="number"
         name="weight"
         id="weight"
+        min="1"
         :value="weight"
         @change="handleChange"
         />
