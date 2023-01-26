@@ -26,6 +26,7 @@ body {
   overflow-x: hidden;
   color: $darkBlue;
   background-color: $white;
+  font-size: 1.25em;
 }
 
 #app {
@@ -66,6 +67,10 @@ button {
   font-family: inherit;
   cursor: pointer;
   transition: all 0.3s ease;
+
+  &:active {
+    transform: scale(0.95);
+  }
 
   &:hover {
     background-color: transparent;

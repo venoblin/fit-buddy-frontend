@@ -1,9 +1,8 @@
 <template>
   <div class="exercise-card">
-    <button @click="clickAddHandler">Toggle Add Mode</button>
     
     <p class="name">{{ exercise.name }}</p>
-
+    
     <div v-if="addMode">
       <form v-if="exercise.type === 'cardio'" @submit="submitHandler">
         <label for="duration">Duration(minutes)</label>
@@ -15,10 +14,10 @@
         :value="duration"
         @change="handleChange"
         />
-
+        
         <button>Add</button>
       </form>
-
+      
       <form v-else @submit="submitHandler">
         <label for="sets">Sets</label>
         <input 
@@ -29,7 +28,7 @@
         :value="sets"
         @change="handleChange"
         />
-
+        
         <label for="reps">Reps</label>
         <input 
         type="number"
@@ -39,7 +38,7 @@
         :value="reps"
         @change="handleChange"
         />
-
+        
         <label for="weight">Weight(LBS)</label>
         <input 
         type="number"
@@ -49,7 +48,7 @@
         :value="weight"
         @change="handleChange"
         />
-
+        
         <button>Add</button>
       </form>
     </div>
@@ -57,8 +56,9 @@
     <div v-else>
       <p class="muscle">Muscle: {{ exercise.muscle }}</p>
       <p class="equipment">Equipment: {{ exercise.equipment }}</p>
-
-      <button @click="clickInstHandler">Toggle Instructions</button>
+      
+      <button @click="clickInstHandler">Instructions</button>
+      <button @click="clickAddHandler">Add</button>
       <p v-if="showInstructions" class="instructions">{{ exercise.instructions }}</p>
     </div>
   </div>
@@ -131,10 +131,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '@/assets/styles/global.scss';
+
 .exercise-card {
   max-width: 500px;
   padding: 1rem;
   margin: 1rem auto;
-  background-color: darkgray;
+  border-bottom: 1px solid $grey;
 }
 </style>

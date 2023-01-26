@@ -10,7 +10,7 @@
       </div>
     
       <div class="inputs" v-if="!editMode">
-        <button @click="clickInstHandler">Toggle Instructions</button>
+        <button @click="clickInstHandler">Instructions</button>
       </div>
     </div>
 
@@ -127,11 +127,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '@/assets/styles/global.scss';
 
 .day-exercise {
   max-width: 700px;
   margin: 0.75rem auto;
-  border-bottom: 1px solid grey;
+  border-bottom: 1px solid $grey;
   
   .top {
     position: relative;

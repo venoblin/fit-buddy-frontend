@@ -97,7 +97,7 @@ export default {
   -moz-box-shadow: 0px 1px 22px -7px rgba(50,63,71,1);
   box-shadow: 0px 1px 22px -7px rgba(50,63,71,1);
   transform: translateX(-2000px);
-  background-color: #E5E6F0;
+  background-color: $white;
   transition: transform 0.3s ease;
 
   &.show {
@@ -107,7 +107,7 @@ export default {
 }
 
 .exercises {
-  height: 300px;
+  height: 400px;
   overflow-y: auto;
 }
 

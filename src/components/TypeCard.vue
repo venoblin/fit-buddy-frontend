@@ -13,11 +13,26 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '@/assets/styles/global.scss';
 
 .type-card {
-  padding: 0.25rem 0.75rem;
-  border-radius: 2rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 1rem;
   cursor: pointer;
-  background-color: grey;
+  margin: 0.1rem;
+  background-color: $lightGrey;
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: $green;
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  p {
+    margin: 0;
+  }
 }
 </style>
