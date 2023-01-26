@@ -16,49 +16,57 @@
 
     <div v-if="showForm">
       <form v-if="exercise.type === 'cardio'" @submit="submitHandler">
-        <label for="duration">Duration(minutes)</label>
-        <input 
-        type="number"
-        name="duration"
-        id="duration"
-        min="1"
-        :value="duration"
-        @change="handleChange"
-        />
+        <div>
+          <label for="duration">Duration(minutes)</label>
+          <input 
+          type="number"
+          name="duration"
+          id="duration"
+          min="1"
+          :value="duration"
+          @change="handleChange"
+          />
+        </div>
 
         <button>Save</button>
       </form>
 
       <form v-else @submit="submitHandler">
-        <label for="sets">Sets</label>
-        <input 
-        type="number"
-        name="sets"
-        id="sets"
-        min="1"
-        :value="sets"
-        @change="handleChange"
-        />
+        <div>
+          <label for="sets">Sets</label>
+          <input 
+          type="number"
+          name="sets"
+          id="sets"
+          min="1"
+          :value="sets"
+          @change="handleChange"
+          />
+        </div>
 
-        <label for="reps">Reps</label>
-        <input 
-        type="number"
-        name="reps"
-        id="reps"
-        min="1"
-        :value="reps"
-        @change="handleChange"
-        />
+        <div>
+          <label for="reps">Reps</label>
+          <input 
+          type="number"
+          name="reps"
+          id="reps"
+          min="1"
+          :value="reps"
+          @change="handleChange"
+          />
+        </div>
 
-        <label for="weight">Weight(LBS)</label>
-        <input 
-        type="number"
-        name="weight"
-        id="weight"
-        min="1"
-        :value="weight"
-        @change="handleChange"
-        />
+        <div>
+          <label for="weight">Weight(LBS)</label>
+          <input 
+          type="number"
+          name="weight"
+          id="weight"
+          min="1"
+          :value="weight"
+          @change="handleChange"
+          />
+        </div>
 
         <button>Save</button>
       </form>

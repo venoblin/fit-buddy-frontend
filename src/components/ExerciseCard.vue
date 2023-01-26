@@ -5,50 +5,58 @@
     
     <div v-if="addMode">
       <form v-if="exercise.type === 'cardio'" @submit="submitHandler">
-        <label for="duration">Duration(minutes)</label>
-        <input 
-        type="number"
-        name="duration"
-        id="duration"
-        min="1"
-        :value="duration"
-        @change="handleChange"
-        />
-        
+        <div>
+          <label for="duration">Duration(minutes)</label>
+          <input 
+          type="number"
+          name="duration"
+          id="duration"
+          min="1"
+          :value="duration"
+          @change="handleChange"
+          />
+        </div>
+
         <button>Add</button>
       </form>
-      
+
       <form v-else @submit="submitHandler">
-        <label for="sets">Sets</label>
-        <input 
-        type="number"
-        name="sets"
-        id="sets"
-        min="1"
-        :value="sets"
-        @change="handleChange"
-        />
-        
-        <label for="reps">Reps</label>
-        <input 
-        type="number"
-        name="reps"
-        id="reps"
-        min="1"
-        :value="reps"
-        @change="handleChange"
-        />
-        
-        <label for="weight">Weight(LBS)</label>
-        <input 
-        type="number"
-        name="weight"
-        id="weight"
-        min="1"
-        :value="weight"
-        @change="handleChange"
-        />
-        
+        <div>
+          <label for="sets">Sets</label>
+          <input 
+          type="number"
+          name="sets"
+          id="sets"
+          min="1"
+          :value="sets"
+          @change="handleChange"
+          />
+        </div>
+
+        <div>
+          <label for="reps">Reps</label>
+          <input 
+          type="number"
+          name="reps"
+          id="reps"
+          min="1"
+          :value="reps"
+          @change="handleChange"
+          />
+        </div>
+
+        <div>
+          <label for="weight">Weight(LBS)</label>
+          <input 
+          type="number"
+          name="weight"
+          id="weight"
+          min="1"
+          :value="weight"
+          @change="handleChange"
+          />
+        </div>
+
         <button>Add</button>
       </form>
     </div>
@@ -57,8 +65,10 @@
       <p class="muscle">Muscle: {{ exercise.muscle }}</p>
       <p class="equipment">Equipment: {{ exercise.equipment }}</p>
       
-      <button @click="clickInstHandler">Instructions</button>
-      <button @click="clickAddHandler">Add</button>
+      <div class="inputs">
+        <button @click="clickInstHandler">Instructions</button>
+        <button @click="clickAddHandler">Add</button>
+      </div>
       <p v-if="showInstructions" class="instructions">{{ exercise.instructions }}</p>
     </div>
   </div>
@@ -138,5 +148,9 @@ export default {
   padding: 1rem;
   margin: 1rem auto;
   border-bottom: 1px solid $grey;
+}
+
+.inputs button {
+  margin: 0 0.5rem;
 }
 </style>
