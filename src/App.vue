@@ -15,6 +15,7 @@ export default {
 </script>
 
 <style lang="scss">
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100;400;700&display=swap');
 @import '@/assets/styles/global.scss';
 
 * {
@@ -28,7 +29,7 @@ body {
 }
 
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Kanit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -57,6 +58,28 @@ body {
 }
 
 button {
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  border: 1px solid $darkBlue;
+  background-color: $darkBlue;
+  color: $white;
+  font-family: inherit;
   cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: transparent;
+    color: $darkBlue;
+  }
+
+  &.danger {
+    background-color: $red;
+    border-color: $red;
+
+    &:hover {
+      background-color: transparent;
+      color: $red;
+    }
+  }
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <button v-if="!findMode" @click="findOpenHandler">Add Exercises</button>
+  <button class="add-exercises-btn" v-if="!findMode" @click="findOpenHandler">Add Exercises</button>
   
   <div class="finder" ref="finder">
     <button @click="findCloseHandler">X</button>
@@ -113,5 +113,9 @@ export default {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+}
+
+.add-exercises-btn {
+  margin-top: 1rem;
 }
 </style>

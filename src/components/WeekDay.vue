@@ -28,7 +28,7 @@ export default {
 <style lang="scss" scoped>
 @import '@/assets/styles/global.scss';
 .day {
-  max-width: 100px;
+  flex: 1;
   position: relative;
   padding: 2rem;
   cursor: pointer;
@@ -39,7 +39,9 @@ export default {
   }
 
   .counter {
-    padding: 5px;
+    width: 2.25rem;
+    height: 2.25rem;
+    margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;

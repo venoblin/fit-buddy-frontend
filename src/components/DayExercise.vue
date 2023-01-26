@@ -6,7 +6,7 @@
     
       <div class="inputs" v-if="editMode && !showForm">
         <button @click="toggleEdit">Edit</button>
-        <button @click="deleteExercise(exercise)">Delete</button>
+        <button class="danger" @click="deleteExercise(exercise)">Delete</button>
       </div>
     
       <div class="inputs" v-if="!editMode">
@@ -129,7 +129,9 @@ export default {
 <style lang="scss" scoped>
 
 .day-exercise {
-  border: 1px solid grey;
+  max-width: 700px;
+  margin: 0.75rem auto;
+  border-bottom: 1px solid grey;
   
   .top {
     position: relative;
@@ -139,6 +141,10 @@ export default {
     .inputs {
       position: absolute;
       right: 0;
+    }
+
+    button {
+      margin-left: 0.5rem;
     }
   }
 }

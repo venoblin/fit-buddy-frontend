@@ -25,8 +25,9 @@ export default {
 <style lang="scss" scoped>
 @import '@/assets/styles/global.scss';
 .week {
+  max-width: 900px;
+  margin: 0 auto;
   display: flex;
-  justify-content: center;
 
   .day {
     border-top: 1px solid $darkBlue;
