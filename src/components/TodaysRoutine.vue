@@ -1,7 +1,7 @@
 <template>
   <div class="dashboard">
     <h1>Welcome {{ user }}!</h1>
-    <h2>Todays Routine:</h2>
+    <h2>Here is your routine for today...</h2>
     
     <div v-if="todaysExercises.length">
       <DayExercise
