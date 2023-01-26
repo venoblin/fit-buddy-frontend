@@ -63,9 +63,11 @@ export default {
       this.$refs.finder.classList.toggle('show')
       this.findMode = false
       this.exercises = null
+      this.searchQuery = ''
     },
     resetExercises() {
       this.exercises = null
+      this.searchQuery = ''
     },
     changeHandler(evt) {
       this.searchQuery = evt.target.value
@@ -77,6 +79,7 @@ export default {
     },
     async typeClickHandler(typeName) {
       this.exercises = await GetExercises({muscle: typeName})
+      this.searchQuery = ''
     }
   }
 }
