@@ -53,7 +53,7 @@ export default {
     }
   }
   &.today {
-    background-color: $grey;
+    background-color: $lightGrey;
   }
 
   &:hover {
