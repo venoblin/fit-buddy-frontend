@@ -107,4 +107,22 @@ input {
     color: $green;
   }
 }
+
+form {
+
+  div {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    label {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+  }
+
+  button {
+    margin-top: 1rem;
+  }
+}
 </style>

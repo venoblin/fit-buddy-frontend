@@ -1,12 +1,12 @@
 <template>
   <div class="exercise-card">
     
-    <p class="name">{{ exercise.name }}</p>
+    <h3 class="name">{{ exercise.name }}</h3>
     
     <div v-if="addMode">
       <form v-if="exercise.type === 'cardio'" @submit="submitHandler">
         <div>
-          <label for="duration">Duration(minutes)</label>
+          <label for="duration">Duration(minutes):</label>
           <input 
           type="number"
           name="duration"
@@ -22,7 +22,7 @@
 
       <form v-else @submit="submitHandler">
         <div>
-          <label for="sets">Sets</label>
+          <label for="sets">Sets:</label>
           <input 
           type="number"
           name="sets"
@@ -34,7 +34,7 @@
         </div>
 
         <div>
-          <label for="reps">Reps</label>
+          <label for="reps">Reps:</label>
           <input 
           type="number"
           name="reps"
@@ -46,7 +46,7 @@
         </div>
 
         <div>
-          <label for="weight">Weight(LBS)</label>
+          <label for="weight">Weight(LBS):</label>
           <input 
           type="number"
           name="weight"
@@ -148,6 +148,12 @@ export default {
   padding: 1rem;
   margin: 1rem auto;
   border-bottom: 1px solid $grey;
+}
+
+.name,
+.muscle,
+.equipment {
+  text-transform: capitalize;
 }
 
 .inputs button {

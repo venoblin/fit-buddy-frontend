@@ -1,9 +1,15 @@
 <template>
   <div class="day-exercise capitalize">
     <div class="top">
-      <p v-if="exercise.type === 'cardio'">{{ exercise.name }} -> {{ exercise.duration }} mins</p>
-      <p v-else>{{ exercise.name }} -> {{ exercise.sets }} sets | {{ exercise.reps }} reps @ {{ exercise.weight }}LBS</p>
-    
+      <div class="first">
+        <p class="exercise-name">{{ exercise.name }}</p>
+      </div>
+
+      <div class="middle">
+        <p v-if="exercise.type === 'cardio'">{{ exercise.duration }} mins</p>
+        <p v-else>{{ exercise.sets }} sets | {{ exercise.reps }} reps @ {{ exercise.weight }}LBS</p>
+      </div>
+
       <div class="inputs" v-if="editMode && !showForm">
         <button @click="toggleEdit">Edit</button>
         <button class="danger" @click="deleteExercise(exercise)">Delete</button>
@@ -17,7 +23,7 @@
     <div v-if="showForm">
       <form v-if="exercise.type === 'cardio'" @submit="submitHandler">
         <div>
-          <label for="duration">Duration(minutes)</label>
+          <label for="duration">Duration(minutes):</label>
           <input 
           type="number"
           name="duration"
@@ -33,7 +39,7 @@
 
       <form v-else @submit="submitHandler">
         <div>
-          <label for="sets">Sets</label>
+          <label for="sets">Sets:</label>
           <input 
           type="number"
           name="sets"
@@ -45,7 +51,7 @@
         </div>
 
         <div>
-          <label for="reps">Reps</label>
+          <label for="reps">Reps:</label>
           <input 
           type="number"
           name="reps"
@@ -57,7 +63,7 @@
         </div>
 
         <div>
-          <label for="weight">Weight(LBS)</label>
+          <label for="weight">Weight(LBS):</label>
           <input 
           type="number"
           name="weight"
@@ -138,22 +144,33 @@ export default {
 @import '@/assets/styles/global.scss';
 
 .day-exercise {
-  max-width: 700px;
+  max-width: 800px;
+  padding: 1rem;
   margin: 0.75rem auto;
   border-bottom: 1px solid $grey;
   
   .top {
-    position: relative;
-    display: flex;
-    align-items: center;
-
-    .inputs {
-      position: absolute;
-      right: 0;
-    }
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
 
     button {
       margin-left: 0.5rem;
+    }
+
+    .first, 
+    .middle, 
+    .inputs {
+      display: flex;
+      align-items: center;
+    }
+
+    .middle {
+      justify-content: center;
+    }
+
+    .inputs {
+      justify-content: flex-end;
     }
   }
 }

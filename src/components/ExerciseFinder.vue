@@ -88,7 +88,7 @@ export default {
 .finder {
   width: 700px;
   padding-top: 1rem;
-  position: absolute;
+  position: fixed;
   margin: 0 auto;
   bottom: 0;
   left: 0;
