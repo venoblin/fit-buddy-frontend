@@ -2,12 +2,10 @@
   <button class="add-exercises-btn" v-if="!findMode" @click="findOpenHandler">Add Exercises</button>
   
   <div class="finder" ref="finder">
-    <button @click="findCloseHandler">X</button>
-    
-    <h1>Exercise Finder</h1>
-  
+    <button class="close-btn" @click="findCloseHandler">X</button>
+      
     <form @submit="searchHandler">
-      <label for="search">Search</label>
+      <label for="search" class="hide">Search</label>
       <input 
       type="search"
       name="search"
@@ -85,15 +83,21 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '@/assets/styles/global.scss';
 
 .finder {
   width: 700px;
+  padding-top: 1rem;
   position: absolute;
   margin: 0 auto;
   bottom: 0;
   left: 0;
+  border-radius: 1rem 1rem 0 0;
+  -webkit-box-shadow: 0px 1px 22px -7px rgba(50,63,71,1);
+  -moz-box-shadow: 0px 1px 22px -7px rgba(50,63,71,1);
+  box-shadow: 0px 1px 22px -7px rgba(50,63,71,1);
   transform: translateX(-2000px);
-  background-color: darkslategray;
+  background-color: #E5E6F0;
   transition: transform 0.3s ease;
 
   &.show {
@@ -117,5 +121,13 @@ export default {
 
 .add-exercises-btn {
   margin-top: 1rem;
+}
+
+.close-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0.5rem;
+  font-weight: bold;
 }
 </style>

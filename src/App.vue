@@ -81,5 +81,22 @@ button {
       color: $red;
     }
   }
+
+}
+
+input {
+  padding: 0.5rem 1rem;
+  font-size: 1.25em;
+  border: none;
+  outline: none;
+  border-bottom: 3px solid $darkBlue;
+  color: $darkBlue;
+  background-color: transparent;
+  transition: all 0.3s ease;
+
+  &:focus {
+    border-color: $green;
+    color: $green;
+  }
 }
 </style>
