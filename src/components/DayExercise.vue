@@ -2,7 +2,7 @@
   <div class="day-exercise capitalize">
     <div class="top">
       <div class="first">
-        <p class="exercise-name">{{ exercise.name }}</p>
+        <h3 class="exercise-name">{{ exercise.name }}</h3>
       </div>
 
       <div class="middle">
@@ -148,29 +148,41 @@ export default {
   padding: 1rem;
   margin: 0.75rem auto;
   border-bottom: 1px solid $grey;
-  
-  .top {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    text-align: center;
+}
 
-    button {
-      margin-left: 0.5rem;
-    }
+.top {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  button {
+    margin-left: 0.5rem;
+  }
+
+  .first, 
+  .middle, 
+  .inputs {
+    display: flex;
+    align-items: center;
+  }
+
+  .middle {
+    justify-content: center;
+  }
+
+  .inputs {
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width: 800px) {
+  .top {
+    grid-template-columns: 1fr;
+
 
     .first, 
     .middle, 
     .inputs {
-      display: flex;
-      align-items: center;
-    }
-
-    .middle {
       justify-content: center;
-    }
-
-    .inputs {
-      justify-content: flex-end;
     }
   }
 }
