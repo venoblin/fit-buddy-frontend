@@ -1,12 +1,8 @@
 <template>
   <nav>
-    <RouterLink class="link" to="/">FitBuddy</RouterLink>
+    <p class="logo">Fit-Buddy</p>
 
-    <div class="links">
-      <p>Link</p>
-      <p>Link</p>
-      <p>Link</p>
-    </div>
+    <RouterLink class="link" to="/">Home</RouterLink>
   </nav>
 </template>
 
@@ -21,6 +17,7 @@ export default {
 nav {
   display: flex;
   justify-content: space-around;
+  align-items: center;
   .links {
     display: flex;
   }

@@ -19,6 +19,7 @@ export default {
 
 <style lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Koulen&display=swap');
 @import '@/assets/styles/global.scss';
 
 * {
@@ -46,14 +47,17 @@ body {
 }
 
 .link {
-  color: purple;
+  color: black;
   text-decoration: none;
   background-color: transparent;
+  font-size: 1.25em;
   border: none;
   cursor: pointer;
+  text-decoration: underline;
+  transition: all 0.3s ease;
 
-  &:active {
-    color: red;
+  &:hover {
+    color: $green;
   }
 }
 
@@ -90,6 +94,15 @@ button {
     }
   }
 
+}
+
+.logo {
+  margin: 0;
+  padding: 0.5rem;
+  font-size: 1.25em;
+  color: $green;
+  border-radius: 5px;
+  font-family: 'Koulen', cursive;
 }
 
 input {
