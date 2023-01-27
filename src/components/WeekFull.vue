@@ -43,4 +43,10 @@ export default {
     }
   }
 }
+
+@media (max-width: 800px) {
+  .week {
+    overflow-x: scroll;
+  }
+}
 </style>
