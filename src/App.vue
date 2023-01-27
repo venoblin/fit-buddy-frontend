@@ -140,4 +140,8 @@ form {
   }
 }
 
+.big-input {
+  width: 250px;
+}
+
 </style>

@@ -4,6 +4,7 @@
   <form @submit="submitHandler">
     <label class="hide" for="user">Enter Your Name</label>
     <input 
+    class="big-input"
     type="text"
     name="user"
     id="user"

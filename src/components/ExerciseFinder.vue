@@ -7,6 +7,7 @@
     <form @submit="searchHandler">
       <label for="search" class="hide">Search</label>
       <input 
+      class="big-input"
       type="search"
       name="search"
       id="search"
@@ -128,10 +129,6 @@ box-shadow: 0px 15px 22px -19px rgba(50,63,71,1);
 
 .add-exercises-btn {
   margin-top: 1rem;
-}
-
-#search {
-  width: 300px;
 }
 
 .close-btn {
