@@ -106,6 +106,7 @@ button {
 }
 
 input {
+  width: 100px;
   padding: 0.5rem 1rem;
   font-size: 1.25em;
   border: none;

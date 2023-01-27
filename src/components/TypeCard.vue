@@ -35,4 +35,10 @@ export default {
     margin: 0;
   }
 }
+
+@media (max-width: 800px) {
+  .type-card {
+    padding: 0.1rem;
+  }
+}
 </style>

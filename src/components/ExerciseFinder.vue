@@ -89,8 +89,8 @@ export default {
 @import '@/assets/styles/global.scss';
 
 .finder {
-  width: 700px;
-  padding-top: 1rem;
+  max-width: 700px;
+  padding-top: 2.5rem;
   position: fixed;
   margin: 0 auto;
   bottom: 0;
@@ -116,14 +116,22 @@ export default {
 
 .type-container {
   max-width: 800px;
-  margin: 1rem auto;
+  padding-bottom: 1rem;
+  margin-top: 1rem;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  -webkit-box-shadow: 0px 15px 22px -19px rgba(50,63,71,1);
+-moz-box-shadow: 0px 15px 22px -19px rgba(50,63,71,1);
+box-shadow: 0px 15px 22px -19px rgba(50,63,71,1);
 }
 
 .add-exercises-btn {
   margin-top: 1rem;
+}
+
+#search {
+  width: 300px;
 }
 
 .close-btn {
