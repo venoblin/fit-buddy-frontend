@@ -14,7 +14,12 @@
 
 ---
 
-### **_Screenshots_**
+### **_Technologies Used_**
+
+- Vue
+- SASS
+
+---
 
 ![Image](/project-info/screenshot01.png)
 
