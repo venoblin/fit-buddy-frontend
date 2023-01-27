@@ -8,6 +8,10 @@
 
 ---
 
+### [**_Demo_**](https://fit-buddy.herokuapp.com/)
+
+---
+
 ### **_Description_**
 
 #### An application used to set up your workout routine for the week!
