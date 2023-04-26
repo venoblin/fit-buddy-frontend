@@ -2,14 +2,25 @@
   <nav>
     <p class="logo">Fit-Buddy</p>
 
-    <RouterLink class="link" to="/">Home</RouterLink>
+    <RouterLink v-if="isLoggedIn" class="link" to="/">Home</RouterLink>
   </nav>
 </template>
 
 <script>
 
 export default {
-  name: 'NavBar'
+  name: 'NavBar',
+  data: () => ({
+    isLoggedIn: false
+  }), 
+  methods: {
+   checkIfLoggedIn() {
+    if (localStorage.getItem('user')) this.isLoggedIn = true
+   }
+  },
+  mounted: function() {
+    this.checkIfLoggedIn()
+  }
 }
 </script>
 
