@@ -2,7 +2,7 @@
   <div class="day-exercise capitalize">
     <div class="top">
       <div class="first">
-        <div class="up-down-inputs">
+        <div class="up-down-inputs" v-if="editMode && !showForm">
           <button>&uarr;</button>
           <button>&darr;</button>
         </div>
