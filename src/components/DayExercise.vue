@@ -161,11 +161,13 @@ export default {
   margin-right: 0.5rem;
   
   button {
-    font-size: 1em;
+    font-size: 0.75em;
+    border-radius: 0 0 1rem 1rem;
   }
-
+  
   button:nth-of-type(1) {
     margin-bottom: 0.25rem;
+    border-radius: 1rem 1rem 0 0;
   }
 }
 
