@@ -32,6 +32,7 @@ export const typesArr = [
   'quadriceps',
   'traps',
   'triceps',
+  'shoulders',
   'cardio'
 ]
 
