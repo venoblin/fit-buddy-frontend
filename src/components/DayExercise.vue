@@ -3,8 +3,8 @@
     <div class="top">
       <div class="first">
         <div class="up-down-inputs" v-if="editMode && !showForm">
-          <button>&uarr;</button>
-          <button>&darr;</button>
+          <button @click="moveExercise(exercise, 'left')">&uarr;</button>
+          <button @click="moveExercise(exercise, 'right')">&darr;</button>
         </div>
         <h3 class="exercise-name">{{ exercise.name }}</h3>
       </div>
@@ -102,6 +102,13 @@ export default {
     duration: null
   }),
   methods: {
+    moveExercise(exercise, direction) {
+      if(direction === 'left') {
+        console.log('moving left', exercise)
+      } else if (direction === 'right') {
+        console.log('moving right', exercise)
+      }
+    },
     toggleEdit() {
       this.showForm = !this.showForm
     },
