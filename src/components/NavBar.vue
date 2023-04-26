@@ -14,9 +14,9 @@ export default {
     isLoggedIn: false
   }), 
   methods: {
-   checkIfLoggedIn() {
-    if (localStorage.getItem('user')) this.isLoggedIn = true
-   }
+    checkIfLoggedIn() {
+      if (localStorage.getItem('user')) this.isLoggedIn = true
+    }
   },
   mounted: function() {
     this.checkIfLoggedIn()

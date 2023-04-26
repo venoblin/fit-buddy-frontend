@@ -2,6 +2,10 @@
   <div class="day-exercise capitalize">
     <div class="top">
       <div class="first">
+        <div class="up-down-inputs">
+          <button>&uarr;</button>
+          <button>&darr;</button>
+        </div>
         <h3 class="exercise-name">{{ exercise.name }}</h3>
       </div>
 
@@ -148,6 +152,21 @@ export default {
   padding: 1rem;
   margin: 0.75rem auto;
   border-bottom: 1px solid $grey;
+}
+
+.up-down-inputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 0.5rem;
+  
+  button {
+    font-size: 1em;
+  }
+
+  button:nth-of-type(1) {
+    margin-bottom: 0.25rem;
+  }
 }
 
 .top {
