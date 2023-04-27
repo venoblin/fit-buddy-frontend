@@ -10,6 +10,7 @@
       :editMode="true"
       :deleteExercise="deleteExercise"
       :editExercise="editExercise"
+      :day="day"
       />
     </div>
 

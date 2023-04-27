@@ -92,19 +92,20 @@ import { useRoutineStore } from '@/stores/routine'
 
 export default {
   name: 'DayExercise',
-  props: ['editMode', 'exercise', 'deleteExercise', 'editExercise'],
+  props: ['editMode', 'exercise', 'deleteExercise', 'editExercise', 'day'],
   data: () => ({
     showForm: false,
     showInstructions: false,
     sets: null,
     reps: null,
     weight: null,
-    duration: null
+    duration: null,
+    routine: useRoutineStore().routineArr
   }),
   methods: {
     moveExercise(exercise, direction) {
       if(direction === 'left') {
-        console.log('moving left', exercise)
+        console.log(this.day)
       } else if (direction === 'right') {
         console.log('moving right', exercise)
       }
