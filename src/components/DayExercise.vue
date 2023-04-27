@@ -187,6 +187,7 @@ export default {
   padding: 1rem;
   margin: 0.75rem auto;
   border-bottom: 1px solid $grey;
+  position: relative;
 }
 
 .up-down-inputs {
@@ -231,9 +232,16 @@ export default {
 }
 
 @media (max-width: 800px) {
+  
+  .up-down-inputs {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+  }
+
   .top {
     grid-template-columns: 1fr;
-
 
     .first, 
     .middle, 
