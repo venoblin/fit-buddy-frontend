@@ -127,15 +127,15 @@ export default {
         if (idx > 0) {
           dayExercises[idx] = dayExercises[idx - 1]
           dayExercises[idx - 1] = this.exercise
-          
         }
       } else if (direction === 'right') {
         if (idx < dayExercises.length - 1) {
           dayExercises[idx] = dayExercises[idx + 1]
           dayExercises[idx + 1] = this.exercise
-          
         }
       }
+
+      useRoutineStore().updateDayExercises(this.day, dayExercises)
     },
     toggleEdit() {
       this.showForm = !this.showForm
