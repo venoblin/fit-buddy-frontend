@@ -103,12 +103,14 @@ export default {
     routine: useRoutineStore().routineArr
   }),
   methods: {
-    findExerciseIndex() {
+    findExercisePosition() {
       let idx = null
+      let dayExercises = null
 
       this.routine.forEach(r => {
         if (r.name === this.day) {
-          r.exercises.forEach(e => {
+          dayExercises = r.exercises
+          dayExercises.forEach(e => {
             if (e.id === this.exercise.id) {
               idx = r.exercises.indexOf(this.exercise)
             }
@@ -116,15 +118,23 @@ export default {
         }
       })
 
-      return idx
+      return {idx, dayExercises}
     },
     moveExercise(direction) {
-      let idx = this.findExerciseIndex()
+      const {idx, dayExercises} = this.findExercisePosition()
 
       if(direction === 'left') {
-        console.log('left', idx)
+        if (idx > 0) {
+          dayExercises[idx] = dayExercises[idx - 1]
+          dayExercises[idx - 1] = this.exercise
+          
+        }
       } else if (direction === 'right') {
-        console.log('right', idx)
+        if (idx < dayExercises.length - 1) {
+          dayExercises[idx] = dayExercises[idx + 1]
+          dayExercises[idx + 1] = this.exercise
+          
+        }
       }
     },
     toggleEdit() {
