@@ -3,8 +3,8 @@
     <div class="top">
       <div class="first">
         <div class="up-down-inputs" v-if="editMode && !showForm">
-          <button @click="moveExercise(exercise, 'left')">&uarr;</button>
-          <button @click="moveExercise(exercise, 'right')">&darr;</button>
+          <button @click="moveExercise('left')">&uarr;</button>
+          <button @click="moveExercise('right')">&darr;</button>
         </div>
         <h3 class="exercise-name">{{ exercise.name }}</h3>
       </div>
@@ -103,11 +103,28 @@ export default {
     routine: useRoutineStore().routineArr
   }),
   methods: {
-    moveExercise(exercise, direction) {
+    findExerciseIndex() {
+      let idx = null
+
+      this.routine.forEach(r => {
+        if (r.name === this.day) {
+          r.exercises.forEach(e => {
+            if (e.id === this.exercise.id) {
+              idx = r.exercises.indexOf(this.exercise)
+            }
+          })
+        }
+      })
+
+      return idx
+    },
+    moveExercise(direction) {
+      let idx = this.findExerciseIndex()
+
       if(direction === 'left') {
-        console.log(this.day)
+        console.log('left', idx)
       } else if (direction === 'right') {
-        console.log('moving right', exercise)
+        console.log('right', idx)
       }
     },
     toggleEdit() {
