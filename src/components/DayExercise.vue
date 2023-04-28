@@ -20,8 +20,12 @@
       </div>
     
       <div class="last" v-if="!editMode">
-        <button @click="clickInstHandler">Instructions</button>        
-        <input type="radio" />       
+        <button @click="clickInstHandler">Instructions</button>  
+        
+        <div class="input">
+          <p>Done: </p>
+          <input type="radio" />       
+        </div>
       </div>
     </div>
 
@@ -240,6 +244,17 @@ export default {
 
   button {
     margin-bottom: 0.75rem;
+  }
+
+  .input {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    input {
+      height: 1rem;
+      width: 1rem;
+    }
   }
 }
 
