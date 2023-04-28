@@ -19,8 +19,9 @@
         <button class="danger" @click="deleteExercise(exercise)">Delete</button>
       </div>
     
-      <div class="inputs" v-if="!editMode">
-        <button @click="clickInstHandler">Instructions</button>
+      <div class="last" v-if="!editMode">
+        <button @click="clickInstHandler">Instructions</button>        
+        <input type="radio" />       
       </div>
     </div>
 
@@ -216,7 +217,7 @@ export default {
   }
 
   .first, 
-  .middle, 
+  .middle,
   .inputs {
     display: flex;
     align-items: center;
@@ -228,6 +229,17 @@ export default {
 
   .inputs {
     justify-content: flex-end;
+  }
+}
+
+.last {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+
+  button {
+    margin-bottom: 0.75rem;
   }
 }
 
