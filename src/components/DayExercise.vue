@@ -24,8 +24,8 @@
           <p>Done: </p>
           <input type="checkbox" @change="doneToggle" :checked="isDone" />       
         </div>
-        
-        <button @click="clickInstHandler">Instructions</button>  
+
+        <button class="inst-btn" @click="clickInstHandler">Instructions</button>  
       </div>
     </div>
 
@@ -199,7 +199,16 @@ export default {
   position: relative;
 
   &.done {
-    font-size: 0.5em;
+    background-color: $green;
+
+    .exercise-name,
+    .middle p {
+      text-decoration: line-through;
+    }
+
+    .inst-btn {
+      display: none;
+    }
   }
 }
 
