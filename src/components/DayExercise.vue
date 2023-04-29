@@ -197,6 +197,7 @@ export default {
   margin: 0.75rem auto;
   border-bottom: 1px solid $grey;
   position: relative;
+  border-radius: 5px;
 
   &.done {
     background-color: $green;
