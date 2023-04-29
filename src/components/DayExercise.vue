@@ -1,5 +1,5 @@
 <template>
-  <div class="day-exercise capitalize">
+  <div class="day-exercise capitalize" :class="{ done: isDone }">
     <div class="top">
       <div class="first">
         <div class="up-down-inputs" v-if="editMode && !showForm">
@@ -24,7 +24,7 @@
         
         <div class="input">
           <p>Done: </p>
-          <input type="checkbox" />       
+          <input type="checkbox" @change="doneToggle" :checked="isDone" />       
         </div>
       </div>
     </div>
@@ -109,6 +109,9 @@ export default {
     routine: useRoutineStore().routineArr
   }),
   methods: {
+    doneToggle() {
+      this.isDone = !this.isDone
+    },
     findExercisePosition() {
       let idx = null
       let dayExercises = null
@@ -194,6 +197,10 @@ export default {
   margin: 0.75rem auto;
   border-bottom: 1px solid $grey;
   position: relative;
+
+  &.done {
+    background-color: red;
+  }
 }
 
 .up-down-inputs {
