@@ -24,7 +24,7 @@
         
         <div class="input">
           <p>Done: </p>
-          <input type="radio" />       
+          <input type="checkbox" />       
         </div>
       </div>
     </div>
@@ -101,6 +101,7 @@ export default {
   data: () => ({
     showForm: false,
     showInstructions: false,
+    isDone: false,
     sets: null,
     reps: null,
     weight: null,
