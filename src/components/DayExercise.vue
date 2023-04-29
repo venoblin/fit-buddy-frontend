@@ -20,12 +20,12 @@
       </div>
     
       <div class="last" v-if="!editMode">
-        <button @click="clickInstHandler">Instructions</button>  
-        
         <div class="input">
           <p>Done: </p>
           <input type="checkbox" @change="doneToggle" :checked="isDone" />       
         </div>
+        
+        <button @click="clickInstHandler">Instructions</button>  
       </div>
     </div>
 
@@ -199,7 +199,7 @@ export default {
   position: relative;
 
   &.done {
-    background-color: red;
+    font-size: 0.5em;
   }
 }
 
