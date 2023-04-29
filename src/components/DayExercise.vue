@@ -293,6 +293,10 @@ export default {
     .inputs {
       justify-content: center;
     }
+
+    .last {
+      align-items: center;
+    }
   }
 }
 </style>
