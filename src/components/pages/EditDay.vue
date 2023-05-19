@@ -1,6 +1,8 @@
 <template>  
   <h1 class="capitalize">{{ day }}</h1>
 
+  <WorkOuts />
+
   <div>
     <div v-if="daysExercises.length">
       <DayExercise
@@ -25,12 +27,14 @@
 <script>
 import { useRoutineStore } from '@/stores/routine';
 import { getIndexOfDay } from '@/utils';
+import WorkOuts from '../WorkOuts.vue';
 import DayExercise from '../DayExercise.vue';
 import ExerciseFinder from '../ExerciseFinder.vue';
 
 export default {
   name: 'EditVue',
   components: {
+    WorkOuts,
     DayExercise,
     ExerciseFinder
   },
