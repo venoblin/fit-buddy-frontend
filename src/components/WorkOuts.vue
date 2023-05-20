@@ -1,7 +1,7 @@
 <template>
   <div class="inputs">
-    <button>Save Workout</button>
-    <button>Load Workout</button>
+    <button @click="saveHandler">Save Workout</button>
+    <button @click="loadHandler">Load Workout</button>
   </div>
 
   <div class="save">
@@ -15,7 +15,15 @@
 
 <script>
 export default {
-  name: 'WorkOuts'
+  name: 'WorkOuts',
+  methods: {
+    saveHandler() {
+      console.log('saving')
+    },
+    loadHandler() {
+      console.log('loading')
+    }
+  }
 }
 </script>
 
