@@ -1,5 +1,10 @@
 <template>
-  <h2>Workouts</h2>
+  <div>
+    <button>Save Workout</button>
+  </div>
+  <div>
+    <button>Load Workout</button>
+  </div>
 </template>
 
 <script>
