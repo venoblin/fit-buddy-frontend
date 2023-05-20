@@ -8,6 +8,8 @@
 
   <div class="save" v-if="mode === 'save'">
     <h2>Save Workout</h2>
+    <input type="text" placeholder="name" />
+    <button>Save</button>
   </div>
 
   <div class="load" v-if="mode === 'load'">
