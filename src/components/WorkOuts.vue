@@ -1,8 +1,10 @@
 <template>
-  <div class="inputs">
+  <div class="inputs" v-if="mode === 'none'">
     <button @click="saveHandler">Save Workout</button>
     <button @click="loadHandler">Load Workout</button>
   </div>
+
+  <button @click="closeHandler" v-if="mode !== 'none'">X</button>
 
   <div class="save" v-if="mode === 'save'">
     <h2>Save Workout</h2>
@@ -17,16 +19,17 @@
 export default {
   name: 'WorkOuts',
   data: () => ({
-    mode: 'none'
+    mode: 'none' //used to determine if we display save or load divs
   }),
   methods: {
     saveHandler() {
-      console.log('saving')
       this.mode = 'save'
     },
     loadHandler() {
-      console.log('loading')
       this.mode = 'load'
+    },
+    closeHandler() {
+      this.mode = 'none'
     }
   }
 }
