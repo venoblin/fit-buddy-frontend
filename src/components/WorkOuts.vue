@@ -4,11 +4,11 @@
     <button @click="loadHandler">Load Workout</button>
   </div>
 
-  <div class="save">
+  <div class="save" v-if="mode === 'save'">
     <h2>Save Workout</h2>
   </div>
 
-  <div class="load">
+  <div class="load" v-if="mode === 'load'">
     <h2>Load Workout</h2>
   </div>
 </template>
@@ -16,12 +16,17 @@
 <script>
 export default {
   name: 'WorkOuts',
+  data: () => ({
+    mode: 'none'
+  }),
   methods: {
     saveHandler() {
       console.log('saving')
+      this.mode = 'save'
     },
     loadHandler() {
       console.log('loading')
+      this.mode = 'load'
     }
   }
 }
