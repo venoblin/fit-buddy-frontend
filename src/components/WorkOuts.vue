@@ -1,9 +1,15 @@
 <template>
-  <div>
+  <div class="inputs">
     <button>Save Workout</button>
-  </div>
-  <div>
     <button>Load Workout</button>
+  </div>
+
+  <div class="save">
+    <h2>Save Workout</h2>
+  </div>
+
+  <div class="load">
+    <h2>Load Workout</h2>
   </div>
 </template>
 
