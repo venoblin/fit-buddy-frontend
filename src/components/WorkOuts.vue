@@ -51,5 +51,16 @@ export default {
 
 .active {
   background-color: $darkBlue;
+
+  button {
+    border-color: $white;
+    background-color: $white;
+    color: $darkBlue;
+
+    &:hover {
+    background-color: transparent;
+    color: $white;
+    }
+  }
 }
 </style>
