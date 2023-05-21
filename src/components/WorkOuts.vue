@@ -61,14 +61,17 @@ export default {
   methods: {
     saveHandler() {
       this.mode = 'save'
+      this.workoutName = ''
       this.workoutRef.classList.add('active')
     },
     loadHandler() {
       this.mode = 'load'
+      this.workoutName = ''
       this.workoutRef.classList.add('active')
     },
     closeHandler() {
       this.mode = 'none'
+      this.workoutName = ''
       this.workoutRef.classList.remove('active')
     },
     changeHandler(evt) {
@@ -82,6 +85,7 @@ export default {
       })
 
       this.workoutName = ''
+      this.closeHandler()
     }
   },
   mounted: function() {
