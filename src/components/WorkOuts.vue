@@ -27,19 +27,35 @@
 
     <div class="load" v-if="mode === 'load'">
       <h2>Load Workout</h2>
+
+      <div v-if="workouts.length">
+        <WorkOutsCard
+        v-for="workout in workouts"
+        :key="workout.name"
+        :workout="workout" />
+      </div>
+
+      <div v-else>
+        <p>No saved workouts!</p>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import { useWorkoutsStore } from '@/stores/workouts';
+import WorkOutsCard from './WorkOutsCard.vue';
 
 export default {
   name: 'WorkOuts',
   props: ['exercises'],
+  components: {
+    WorkOutsCard
+  },
   data: () => ({
     workoutRef: null,
     workoutName: '',
+    workouts: useWorkoutsStore().workoutsArr,
     mode: 'none' //used to determine if we display save or load divs
   }),
   methods: {
@@ -88,6 +104,10 @@ h2 {
   color: $white;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
+}
+
+p {
+  color: $white;
 }
 
 .workouts {
