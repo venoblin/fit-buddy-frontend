@@ -6,5 +6,13 @@ export const useWorkoutsStore = defineStore('workouts', {
       window.localStorage.getItem('workouts') || JSON.stringify([])
     )
   }),
-  actions: {}
+  actions: {
+    addWorkout(workout) {
+      this.workoutsArr.forEach((item) => {
+        if (item.name === workout.name) return Error
+      })
+
+      console.log(workout)
+    }
+  }
 })
