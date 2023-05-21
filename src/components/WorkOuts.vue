@@ -40,10 +40,6 @@ export default {
   data: () => ({
     workoutRef: null,
     workoutName: '',
-    workout: {
-      name: null,
-      exercises: null
-    },
     mode: 'none' //used to determine if we display save or load divs
   }),
   methods: {
@@ -64,9 +60,10 @@ export default {
     },
     submitHandler(evt) {
       evt.preventDefault()
-      this.workout.name = this.workoutName
-      this.workout.exercises = this.exercises
-      useWorkoutsStore().addWorkout(this.workout)
+      useWorkoutsStore().addWorkout({
+        name: this.workoutName,
+        exercises: this.exercises
+      })
 
       this.workoutName = ''
     }
