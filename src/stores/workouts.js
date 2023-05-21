@@ -9,7 +9,7 @@ export const useWorkoutsStore = defineStore('workouts', {
   actions: {
     addWorkout(workout) {
       this.workoutsArr.forEach((item) => {
-        if (item.name === workout.name) throw Error
+        if (item.name.toLowerCase() === workout.name.toLowerCase()) throw Error
       })
 
       this.workoutsArr.push(workout)
