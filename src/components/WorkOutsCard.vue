@@ -7,16 +7,22 @@
 
     <div class="inputs">
       <button>Load</button>
-      <button class="danger">Delete</button>
+      <button class="danger" @click="deleteHandler">Delete</button>
     </div>
   </div>
 </template>
 
 <script>
+import { useWorkoutsStore } from '@/stores/workouts';
 
 export default {
   name: 'WorkOutsCard',
-  props: ['workout']
+  props: ['workout'],
+  methods: {
+    deleteHandler() {
+      useWorkoutsStore().deleteWorkout(this.workout)
+    }
+  }
 }
 </script>
 

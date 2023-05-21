@@ -80,7 +80,7 @@ export default {
     submitHandler(evt) {
       evt.preventDefault()
       useWorkoutsStore().addWorkout({
-        name: this.workoutName.toLowerCase(),
+        name: this.workoutName.toLowerCase().trim(),
         exercises: this.exercises
       })
 
