@@ -142,4 +142,10 @@ p {
     }
   }
 }
+
+.load {
+  margin-top: 1rem;
+  height: 350px;
+  overflow-y: auto;
+}
 </style>
