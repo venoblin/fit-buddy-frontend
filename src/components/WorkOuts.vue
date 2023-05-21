@@ -1,5 +1,5 @@
 <template>
-  <div ref="workouts">
+  <div ref="workouts" class="workouts">
     <div class="inputs" v-if="mode === 'none'">
       <button @click="saveHandler">Save Workout</button>
       <button @click="loadHandler">Load Workout</button>
@@ -80,6 +80,33 @@ export default {
 <style lang="scss" scoped>
 @import '@/assets/styles/global.scss';
 
+.inputs {
+  button {
+    margin: 0 0.5rem;
+  }
+}
+
+
+h2 {
+  color: $white;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.workouts {
+  padding: 1rem 0;
+  border-radius: 1rem;
+
+  input {
+    border-color: $white;
+    color: $white;
+
+    &:focus {
+      border-color: $green;
+      color: $green;
+    }
+  }
+}
 .active {
   background-color: $darkBlue;
 
