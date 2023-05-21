@@ -1,7 +1,7 @@
 <template>  
   <h1 class="capitalize">{{ day }}</h1>
 
-  <WorkOuts />
+  <WorkOuts :exercises="daysExercises" />
 
   <div>
     <div v-if="daysExercises.length">

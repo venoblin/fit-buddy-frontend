@@ -19,7 +19,7 @@
         placeholder="Name"
         :value="workoutName"
         @input="changeHandler" />
-        
+
         <button>Save</button>
       </form>
     </div>
@@ -33,9 +33,14 @@
 <script>
 export default {
   name: 'WorkOuts',
+  props: ['exercises'],
   data: () => ({
     workoutRef: null,
     workoutName: '',
+    workout: {
+      name: null,
+      exercises: null
+    },
     mode: 'none' //used to determine if we display save or load divs
   }),
   methods: {
@@ -56,7 +61,7 @@ export default {
     },
     submitHandler(evt) {
       evt.preventDefault()
-      console.log(this.workoutName)
+      console.log(this.exercises)
     }
   },
   mounted: function() {
