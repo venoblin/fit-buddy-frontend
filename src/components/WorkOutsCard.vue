@@ -1,21 +1,20 @@
 <template>
   <div class="workout-card">
     <h3>{{ workout.name }}</h3>
-    <p 
-    v-for="exercise in workout.exercises"
-    :key="exercise.id">{{ exercise.name }}</p>
+    <p v-for="exercise in workout.exercises" :key="exercise.id">{{ exercise.name }}</p>
 
     <div class="inputs">
-      <button>Load</button>
+      <button @click="loadWorkout(workout)">Load</button>
       <button class="danger" @click="deleteWorkout(workout)">Delete</button>
     </div>
   </div>
 </template>
 
 <script>
+
 export default {
   name: 'WorkOutsCard',
-  props: ['workout', 'deleteWorkout']
+  props: ['workout', 'deleteWorkout', 'loadWorkout']
 }
 </script>
 

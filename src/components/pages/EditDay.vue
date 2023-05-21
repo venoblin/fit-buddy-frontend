@@ -1,7 +1,7 @@
 <template>  
   <h1 class="capitalize">{{ day }}</h1>
 
-  <WorkOuts :exercises="daysExercises" />
+  <WorkOuts :exercises="daysExercises" :loadWorkout="loadWorkout" />
 
   <div>
     <div v-if="daysExercises.length">
@@ -53,6 +53,10 @@ export default {
     },
     editExercise(e, update) {
       useRoutineStore().editExercise(this.$route.params.day, e, update)
+      this.getTodaysExercises()
+    },
+    loadWorkout(workout) {
+      useRoutineStore().replaceExercises(this.$route.params.day, workout.exercises)
       this.getTodaysExercises()
     }
   },

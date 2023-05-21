@@ -33,7 +33,8 @@
         v-for="workout in workouts"
         :key="workout.name"
         :workout="workout"
-        :deleteWorkout="deleteWorkout" />
+        :deleteWorkout="deleteWorkout"
+        :loadWorkout="loadWorkout" />
       </div>
 
       <div v-else>
@@ -49,7 +50,7 @@ import WorkOutsCard from './WorkOutsCard.vue';
 
 export default {
   name: 'WorkOuts',
-  props: ['exercises'],
+  props: ['exercises', 'loadWorkout'],
   components: {
     WorkOutsCard
   },
