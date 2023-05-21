@@ -17,6 +17,7 @@
         type="text"
         name="workoutName"
         placeholder="Name"
+        required
         :value="workoutName"
         @input="changeHandler" />
 
@@ -31,6 +32,8 @@
 </template>
 
 <script>
+import { useWorkoutsStore } from '@/stores/workouts';
+
 export default {
   name: 'WorkOuts',
   props: ['exercises'],
@@ -61,7 +64,11 @@ export default {
     },
     submitHandler(evt) {
       evt.preventDefault()
-      console.log(this.exercises)
+      this.workout.name = this.workoutName
+      this.workout.exercises = this.exercises
+      useWorkoutsStore().addWorkout(this.workout)
+
+      this.workoutName = ''
     }
   },
   mounted: function() {

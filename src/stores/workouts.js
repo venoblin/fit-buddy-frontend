@@ -9,10 +9,11 @@ export const useWorkoutsStore = defineStore('workouts', {
   actions: {
     addWorkout(workout) {
       this.workoutsArr.forEach((item) => {
-        if (item.name === workout.name) return Error
+        if (item.name === workout.name) throw Error
       })
 
-      console.log(workout)
+      this.workoutsArr.push(workout)
+      window.localStorage.setItem('workouts', JSON.stringify(this.workoutsArr))
     }
   }
 })
