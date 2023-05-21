@@ -80,7 +80,7 @@ export default {
     submitHandler(evt) {
       evt.preventDefault()
       useWorkoutsStore().addWorkout({
-        name: this.workoutName,
+        name: this.workoutName.toLowerCase(),
         exercises: this.exercises
       })
 
@@ -145,7 +145,7 @@ p {
 
 .load {
   margin-top: 1rem;
-  height: 350px;
+  height: 400px;
   overflow-y: auto;
 }
 </style>

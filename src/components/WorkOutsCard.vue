@@ -4,6 +4,11 @@
     <p 
     v-for="exercise in workout.exercises"
     :key="exercise.id">{{ exercise.name }}</p>
+
+    <div class="inputs">
+      <button>Load</button>
+      <button class="danger">Delete</button>
+    </div>
   </div>
 </template>
 
@@ -20,13 +25,11 @@ export default {
 
 .workout-card {
   text-align: left;
-  cursor: pointer;
   background-color: $white;
-  border: 1px solid $darkBlue;
   max-width: 250px;
   margin: 0.5rem auto;
   border-radius: 1rem;
-  padding: 0 0.75rem;
+  padding: 0.75rem;
   transition: all 0.3s ease;
 
   h3 {
@@ -40,10 +43,8 @@ export default {
     border-bottom: 1px solid $grey;
   }
 
-  &:hover {
-    background-color: $darkBlue;
-    color: $white;
-    border-color: $white;
+  .inputs {
+    margin-top: 1rem;
   }
 }
 
