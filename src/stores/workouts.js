@@ -21,6 +21,7 @@ export const useWorkoutsStore = defineStore('workouts', {
       )
 
       window.localStorage.setItem('workouts', JSON.stringify(this.workoutsArr))
+      return this.workoutsArr
     }
   }
 })

@@ -18,7 +18,7 @@
         <button @click="toggleEdit">Edit</button>
         <button class="danger" @click="deleteExercise(exercise)">Delete</button>
       </div>
-    
+      
       <div class="last" v-if="!editMode">
         <div class="input">
           <p>Done: </p>

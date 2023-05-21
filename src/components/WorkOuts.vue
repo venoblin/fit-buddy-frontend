@@ -32,7 +32,8 @@
         <WorkOutsCard
         v-for="workout in workouts"
         :key="workout.name"
-        :workout="workout" />
+        :workout="workout"
+        :deleteWorkout="deleteWorkout" />
       </div>
 
       <div v-else>
@@ -86,6 +87,9 @@ export default {
 
       this.workoutName = ''
       this.closeHandler()
+    },
+    deleteWorkout(workout) {
+      this.workouts = useWorkoutsStore().deleteWorkout(workout)
     }
   },
   mounted: function() {
