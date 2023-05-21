@@ -4,7 +4,7 @@
     <p v-for="exercise in workout.exercises" :key="exercise.id">{{ exercise.name }}</p>
 
     <div class="inputs">
-      <button @click="loadWorkout(workout)">Load</button>
+      <button @click="loadHandler">Load</button>
       <button class="danger" @click="deleteWorkout(workout)">Delete</button>
     </div>
   </div>
@@ -14,7 +14,13 @@
 
 export default {
   name: 'WorkOutsCard',
-  props: ['workout', 'deleteWorkout', 'loadWorkout']
+  props: ['workout', 'deleteWorkout', 'loadWorkout', 'closeHandler'],
+  methods: {
+    loadHandler() {
+      this.loadWorkout(this.workout)
+      this.closeHandler()
+    }
+  }
 }
 </script>
 
@@ -43,6 +49,12 @@ export default {
 
   .inputs {
     margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+
+    button {
+      margin: 0 0.25rem;
+    }
   }
 }
 

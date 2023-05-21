@@ -34,7 +34,8 @@
         :key="workout.name"
         :workout="workout"
         :deleteWorkout="deleteWorkout"
-        :loadWorkout="loadWorkout" />
+        :loadWorkout="loadWorkout"
+        :closeHandler="closeHandler" />
       </div>
 
       <div v-else>
