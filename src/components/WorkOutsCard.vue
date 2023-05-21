@@ -1,6 +1,9 @@
 <template>
   <div class="workout-card">
-    <p>{{ workout.name }}</p>
+    <h3>{{ workout.name }}</h3>
+    <p 
+    v-for="exercise in workout.exercises"
+    :key="exercise.id">{{ exercise.name }}</p>
   </div>
 </template>
 
@@ -15,7 +18,21 @@ export default {
 <style lang="scss" scoped>
 @import '@/assets/styles/global.scss';
 
-p {
-  color: $white;
+.workout-card {
+  cursor: pointer;
+  background-color: $white;
+  border: 1px solid $darkBlue;
+  max-width: 250px;
+  margin: 0.5rem auto;
+  border-radius: 1rem;
+  padding: 0 0.5rem;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: $darkBlue;
+    color: $white;
+    border-color: $white;
+  }
 }
+
 </style>

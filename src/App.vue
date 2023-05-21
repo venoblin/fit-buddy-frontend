@@ -93,7 +93,6 @@ button {
       color: $red;
     }
   }
-
 }
 
 .logo {
@@ -123,7 +122,6 @@ input {
 }
 
 form {
-
   div {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
