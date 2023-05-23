@@ -13,6 +13,9 @@ export default {
     closeHandler() {
       this.$refs.alert.remove()
     }
+  },
+  mounted: function() {
+    // setInterval(this.closeHandler, 2000)
   }
 }
 </script>
