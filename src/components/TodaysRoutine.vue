@@ -1,8 +1,7 @@
 <template>
   <div class="dashboard">
     <h1>Welcome {{ user }}!</h1>
-    <h2 v-if="isDone">Completed todays' routine!</h2>
-    <h2 v-else>Here is your routine for today...</h2>
+    <h2>Here is your routine for today...</h2>
     
     <div v-if="todaysExercises.length">
       <DayExercise
@@ -32,8 +31,7 @@ export default {
   data: () => ({
     routine: useRoutineStore().routineArr,
     user: window.localStorage.getItem('user'),
-    todaysExercises: [],
-    isDone: false
+    todaysExercises: []
   }),
   mounted: function(){
     this.todaysExercises = this.routine[getTodaysDate().dayIndex].exercises
