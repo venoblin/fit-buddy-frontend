@@ -1,6 +1,5 @@
 <template>
   <TodaysDate />
-  <AlertPopUp :msg="'TEST MESSAGE'" />
   <WeekFull />
   <TodaysRoutine />
 </template>
@@ -9,15 +8,13 @@
 import TodaysDate from '../TodaysDate.vue'
 import WeekFull from '../WeekFull.vue'
 import TodaysRoutine from '../TodaysRoutine.vue';
-import AlertPopUp from '../AlertPopUp.vue';
 
 export default {
   name: 'HomePage',
   components: {
     TodaysDate,
     WeekFull,
-    TodaysRoutine,
-    AlertPopUp
+    TodaysRoutine
   }
 }
 </script>
