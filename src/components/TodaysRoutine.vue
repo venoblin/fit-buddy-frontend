@@ -20,6 +20,7 @@
 
 <script>
 import { useRoutineStore } from '../stores/routine';
+import { useUserStore } from '@/stores/user';
 import { getTodaysDate } from '@/utils';
 import DayExercise from './DayExercise.vue';
 
@@ -30,7 +31,7 @@ export default {
   },
   data: () => ({
     routine: useRoutineStore().routineArr,
-    user: window.localStorage.getItem('user'),
+    user: useUserStore().user,
     todaysExercises: []
   }),
   mounted: function(){
