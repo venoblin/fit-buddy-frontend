@@ -2,7 +2,10 @@
   <nav>
     <p class="logo">Fit-Buddy</p>
 
-    <RouterLink v-if="isLoggedIn" class="link" to="/">Home</RouterLink>
+    <div v-if="isLoggedIn">
+      <RouterLink class="link" to="/">Home</RouterLink>
+      <RouterLink class="link" to="/profile">Profile</RouterLink>
+    </div>
   </nav>
 </template>
 
@@ -29,8 +32,10 @@ nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  .links {
-    display: flex;
+  .link {    
+    &:first-of-type {
+      margin-right: 1rem;
+    }
   }
 }
 </style>
