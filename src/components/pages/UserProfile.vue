@@ -1,10 +1,15 @@
 <template>
-  <h1>Profile</h1>
+  <h1>{{ `${user}'s` }} Profile</h1>
 </template>
 
 <script>
+import { useUserStore } from '@/stores/user'
+
 export default {
-  name: 'UserProfile'
+  name: 'UserProfile',
+  data: () => ({
+    user: useUserStore().user
+  })
 }
 </script>
 
