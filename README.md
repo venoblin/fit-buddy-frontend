@@ -8,7 +8,7 @@
 
 ---
 
-### [**_Demo_**](https://fit-buddy.herokuapp.com/)
+### [**_Demo_**](https://fitbuddyapp.netlify.app/)
 
 ---
 
