@@ -2,7 +2,7 @@
   <h1>{{ `${user}'s` }} Profile</h1>
 
   <form v-if="isEditing">
-    <input class="big-input" />
+    <input class="big-input" :value="user" />
 
     <button>Save</button>
   </form>
