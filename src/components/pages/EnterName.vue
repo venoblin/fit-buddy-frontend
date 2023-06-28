@@ -19,6 +19,7 @@
 </template>
 
 <script>
+import { useUserStore } from '@/stores/user'
 
 export default {
   name: 'EnterName',
@@ -32,7 +33,7 @@ export default {
     submitHandler(evt) {
       evt.preventDefault
 
-      window.localStorage.setItem('user', this.user)
+      useUserStore().setUserName(this.user)
       this.$router.push('/')
     }
   }
