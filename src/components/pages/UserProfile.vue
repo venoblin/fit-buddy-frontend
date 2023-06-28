@@ -1,6 +1,12 @@
 <template>
   <h1>{{ `${user}'s` }} Profile</h1>
 
+  <form v-if="isEditing">
+    <input class="big-input" />
+
+    <button>Save</button>
+  </form>
+
   <div class="links">
     <button @click="toggleInput">Edit Name</button>
     <button class="danger" @click="deleteUser">Delete User</button>
