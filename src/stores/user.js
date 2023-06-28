@@ -7,6 +7,9 @@ export const useUserStore = defineStore('user', {
   actions: {
     setUserName(newName) {
       window.localStorage.setItem('user', newName)
+    },
+    deleteUser() {
+      window.localStorage.clear()
     }
   }
 })
