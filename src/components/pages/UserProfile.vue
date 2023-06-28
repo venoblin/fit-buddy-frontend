@@ -1,5 +1,6 @@
 <template>
   <h1>{{ `${user}'s` }} Profile</h1>
+  <button class="danger" @click="deleteUser">Delete User</button>
 </template>
 
 <script>
@@ -9,7 +10,13 @@ export default {
   name: 'UserProfile',
   data: () => ({
     user: useUserStore().user
-  })
+  }),
+  methods: {
+    deleteUser() {
+      useUserStore().deleteUser()
+      this.$router.push('/')
+    }
+  }
 }
 </script>
 
