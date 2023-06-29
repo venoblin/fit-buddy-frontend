@@ -2,7 +2,17 @@
   <h1>{{ `${user}'s` }} Profile</h1>
 
   <form v-if="isEditing">
-    <input class="big-input" :value="user" />
+    <label class="hide" for="user">Update Your Name</label>
+    <input 
+    class="big-input"
+    type="text"
+    name="user"
+    id="user"
+    placeholder="Update your name"
+    required
+    :value="user"
+    @input="changeHandler"
+    />
 
     <button>Save</button>
   </form>
