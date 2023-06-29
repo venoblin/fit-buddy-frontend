@@ -1,7 +1,7 @@
 <template>
   <h1>{{ `${user}'s` }} Profile</h1>
 
-  <form v-if="isEditing">
+  <form v-if="isEditing" @submit="submitHandler">
     <label class="hide" for="update-user">Update Your Name</label>
     <input 
     class="big-input"
@@ -42,6 +42,10 @@ export default {
     },
     changeHandler(evt) {
       this.user = evt.target.value
+    },
+    submitHandler(evt) {
+      evt.preventDefault()
+      console.log(this.user)
     }
   }
 }
