@@ -38,14 +38,16 @@ export default {
       this.$router.push('/')
     },
     toggleInput() {
-      this.isEditing = true
+      this.isEditing = !this.isEditing
     },
     changeHandler(evt) {
       this.user = evt.target.value
     },
     submitHandler(evt) {
       evt.preventDefault()
-      console.log(this.user)
+      
+      useUserStore().setUserName(this.user)
+      this.toggleInput()
     }
   }
 }

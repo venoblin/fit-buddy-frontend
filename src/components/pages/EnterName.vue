@@ -31,7 +31,7 @@ export default {
       this.user = evt.target.value
     },
     submitHandler(evt) {
-      evt.preventDefault
+      evt.preventDefault()
 
       useUserStore().setUserName(this.user)
       this.$router.push('/')
