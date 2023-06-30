@@ -25,6 +25,7 @@
 </template>
 
 <script>
+import { storeToRefs } from 'pinia';
 import { useRoutineStore } from '@/stores/routine';
 import { getIndexOfDay } from '@/utils';
 import WorkOuts from '../WorkOuts.vue';
@@ -40,7 +41,7 @@ export default {
   },
   data: () => ({
     day: null,
-    routine: useRoutineStore().routineArr,
+    routine: storeToRefs(useRoutineStore()).routineArr,
     daysExercises: []
   }),
   methods: {
