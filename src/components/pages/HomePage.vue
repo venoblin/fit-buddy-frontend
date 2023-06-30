@@ -11,6 +11,7 @@
 </template>
 
 <script>
+import { storeToRefs } from 'pinia';
 import { useUserStore } from '@/stores/user';
 import TodaysDate from '../TodaysDate.vue'
 import WeekFull from '../WeekFull.vue'
@@ -26,7 +27,7 @@ export default {
     EnterName
   },
   data: () => ({
-    user: useUserStore().user
+    user: storeToRefs(useUserStore()).user
   })
 }
 </script>

@@ -19,13 +19,12 @@
 </template>
 
 <script>
-import { storeToRefs } from 'pinia'
 import { useUserStore } from '@/stores/user'
 
 export default {
   name: 'EnterName',
   data: () => ({
-    user: storeToRefs(useUserStore()).user
+    user: ''
   }),
   methods: {
     changeHandler(evt) {
@@ -35,7 +34,7 @@ export default {
       evt.preventDefault()
 
       useUserStore().setUserName(this.user)
-      // this.$router.push('/')
+      this.$router.push('/')
     }
   }
 }
