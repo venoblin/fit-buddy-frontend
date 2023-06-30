@@ -1,6 +1,18 @@
 <template>
   <h1>{{ `${user}'s` }} Profile</h1>
 
+  <div class="favorites">
+    <h2>Favorite Exercises</h2>
+
+    <div v-if="favorites.length">
+      <h3>Favorites Here</h3>
+    </div>
+
+    <div v-else>
+      <p>You have no favorites!</p>
+    </div>
+  </div>
+
   <form v-if="isEditing" @submit="submitHandler">
     <label class="hide" for="update-user">Update Your Name</label>
     <input 
@@ -32,6 +44,7 @@ export default {
   name: 'UserProfile',
   data: () => ({
     user: useUserStore().user,
+    favorites: useUserStore().favoritesArr,
     isEditing: false
   }),
   methods: {
