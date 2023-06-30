@@ -15,6 +15,17 @@ export const useUserStore = defineStore('user', {
     deleteUser() {
       this.user = ''
       window.localStorage.clear()
+    },
+    addFavorite(exercise) {
+      this.favoritesArr.forEach((item) => {
+        if (item.name.toLowerCase() === exercise.name.toLowerCase()) throw Error
+      })
+
+      this.favoritesArr.push(exercise)
+      window.localStorage.setItem(
+        'favorites',
+        JSON.stringify(this.favoritesArr)
+      )
     }
   }
 })
