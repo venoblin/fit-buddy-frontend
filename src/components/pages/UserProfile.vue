@@ -25,6 +25,8 @@
 
 <script>
 import { useUserStore } from '@/stores/user'
+import { useRoutineStore } from '@/stores/routine'
+import { useWorkoutsStore } from '@/stores/workouts'
 
 export default {
   name: 'UserProfile',
@@ -35,6 +37,8 @@ export default {
   methods: {
     deleteUser() {
       useUserStore().deleteUser()
+      useRoutineStore().resetRoutine()
+      useWorkoutsStore().resetWorkouts()
       this.$router.push('/')
     },
     toggleInput() {
