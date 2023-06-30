@@ -83,6 +83,38 @@ export const useRoutineStore = defineStore('routine', {
 
       window.localStorage.setItem('routine', JSON.stringify(this.routineArr))
       return this.routineArr
+    },
+    resetRoutine() {
+      this.routineArr = [
+        {
+          name: 'sun',
+          exercises: []
+        },
+        {
+          name: 'mon',
+          exercises: []
+        },
+        {
+          name: 'tue',
+          exercises: []
+        },
+        {
+          name: 'wed',
+          exercises: []
+        },
+        {
+          name: 'thu',
+          exercises: []
+        },
+        {
+          name: 'fri',
+          exercises: []
+        },
+        {
+          name: 'sat',
+          exercises: []
+        }
+      ]
     }
   }
 })
