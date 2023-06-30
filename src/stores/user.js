@@ -2,7 +2,7 @@ import { defineStore } from 'pinia'
 
 export const useUserStore = defineStore('user', {
   state: () => ({
-    user: window.localStorage.getItem('user') || null
+    user: window.localStorage.getItem('user') || ''
   }),
   actions: {
     setUserName(newName) {
@@ -10,7 +10,7 @@ export const useUserStore = defineStore('user', {
       window.localStorage.setItem('user', newName)
     },
     deleteUser() {
-      this.user = null
+      this.user = ''
       window.localStorage.clear()
     }
   }
