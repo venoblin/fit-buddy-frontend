@@ -10,12 +10,13 @@
 </template>
 
 <script>
-import { useUserStore } from '@/stores/user';
+import { storeToRefs } from 'pinia'
+import { useUserStore } from '@/stores/user'
 
 export default {
   name: 'NavBar',
   data: () => ({
-    user: useUserStore().user
+    user: storeToRefs(useUserStore()).user
   })
 }
 </script>
