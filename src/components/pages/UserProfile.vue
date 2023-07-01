@@ -87,5 +87,9 @@ export default {
   padding: 1rem 1rem 2rem 1rem;
   width: fit-content;
   margin: 2rem auto 0 auto;
+
+  .day-exercise:last-of-type {
+    border-bottom: none;
+  }
 }
 </style>
