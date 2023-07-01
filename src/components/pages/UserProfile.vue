@@ -2,7 +2,7 @@
   <h1>{{ `${user}'s` }} Profile</h1>
 
   <div class="user-info" v-if="!isEditing">
-    <div class="inputs" v-if="!isEditing">
+    <div class="inputs">
       <button @click="toggleInput">Edit Name</button>
       <button class="danger" @click="deleteUser">Delete User</button>
     </div>
@@ -19,8 +19,6 @@
       </div>
     </div>
   </div>
-
-  
 
   <form v-if="isEditing" @submit="submitHandler">
     <label class="hide" for="update-user">Update Your Name</label>
@@ -75,9 +73,19 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '@/assets/styles/global.scss';
+
 .inputs {
   button {
     margin: 0 0.5rem;
   }
+}
+
+.favorites {
+  border: 1px solid $grey;
+  border-radius: 1rem;
+  padding: 1rem 1rem 2rem 1rem;
+  width: fit-content;
+  margin: 2rem auto 0 auto;
 }
 </style>
