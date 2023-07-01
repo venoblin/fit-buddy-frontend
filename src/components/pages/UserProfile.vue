@@ -1,17 +1,26 @@
 <template>
   <h1>{{ `${user}'s` }} Profile</h1>
 
-  <div class="favorites">
-    <h2>Favorite Exercises</h2>
-
-    <div v-if="favorites.length">
-      <h3>Favorites Here</h3>
+  <div class="user-info" v-if="!isEditing">
+    <div class="inputs" v-if="!isEditing">
+      <button @click="toggleInput">Edit Name</button>
+      <button class="danger" @click="deleteUser">Delete User</button>
     </div>
+    
+    <div class="favorites">
+      <h2>Favorite Exercises</h2>
 
-    <div v-else>
-      <p>You have no favorites!</p>
+      <div v-if="favorites.length">
+        <h3>Favorites Here</h3>
+      </div>
+
+      <div v-else>
+        <p>You have no favorites!</p>
+      </div>
     </div>
   </div>
+
+  
 
   <form v-if="isEditing" @submit="submitHandler">
     <label class="hide" for="update-user">Update Your Name</label>
@@ -28,11 +37,6 @@
 
     <button>Save</button>
   </form>
-
-  <div class="inputs">
-    <button @click="toggleInput">Edit Name</button>
-    <button class="danger" @click="deleteUser">Delete User</button>
-  </div> 
 </template>
 
 <script>
