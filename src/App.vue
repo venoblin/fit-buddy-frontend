@@ -5,6 +5,7 @@
 </template>
 
 <script>
+import { useUserStore } from './stores/user' 
 import NavBar from './components/NavBar.vue'
 import FooterBar from './components/FooterBar.vue'
 
@@ -13,6 +14,14 @@ export default {
   components: {
     NavBar,
     FooterBar
+  },
+  data: () => ({
+    user: useUserStore().user
+  }),
+  mounted: function() {
+    if (!this.user) {
+      this.$router.push('/')
+    }
   }
 }
 </script>
