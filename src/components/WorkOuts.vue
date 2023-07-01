@@ -9,7 +9,7 @@
     <button @click="closeHandler" v-if="mode !== 'none'">X</button>
 
     <div class="workouts" v-if="mode === 'workouts'">
-      <h2>Load Workout</h2>
+      <h2>Workouts</h2>
 
       <div v-if="workouts.length">
         <WorkOutsCard
@@ -24,6 +24,8 @@
       <div v-else>
         <p>No saved workouts!</p>
       </div>
+
+      <button class="save-btn" @click="saveHandler">Save Workout</button>
     </div>
 
     <div class="save" v-if="mode === 'save'">
@@ -73,15 +75,14 @@ export default {
       this.workoutName = ''
       this.workoutRef.classList.add('active')
     },
-    loadHandler() {
-      this.mode = 'load'
-      this.workoutName = ''
-      this.workoutRef.classList.add('active')
-    },
     closeHandler() {
-      this.mode = 'none'
+      if (this.mode === 'save') {
+        this.mode = 'workouts'
+      } else {
+        this.mode = 'none'
+        this.workoutRef.classList.remove('active')
+      }
       this.workoutName = ''
-      this.workoutRef.classList.remove('active')
     },
     changeHandler(evt) {
       this.workoutName = evt.target.value
@@ -94,7 +95,7 @@ export default {
       })
 
       this.workoutName = ''
-      this.closeHandler()
+      this.mode = 'workouts'
     },
     deleteWorkout(workout) {
       this.workouts = useWorkoutsStore().deleteWorkout(workout)
@@ -114,7 +115,6 @@ export default {
     margin: 0 0.5rem;
   }
 }
-
 
 h2 {
   color: $white;
@@ -155,9 +155,7 @@ p {
   }
 }
 
-.load {
-  margin-top: 1rem;
-  height: 400px;
-  overflow-y: auto;
+.save-btn {
+  margin-top: 2rem;
 }
 </style>
