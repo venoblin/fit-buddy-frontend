@@ -1,8 +1,9 @@
 <template>
   <div ref="workouts" class="workouts">
     <div class="inputs" v-if="mode === 'none'">
-      <button @click="saveHandler">Save Workout</button>
-      <button @click="loadHandler">Load Workout</button>
+      <!-- <button @click="saveHandler">Save Workout</button>
+      <button @click="loadHandler">Load Workout</button> -->
+      <button @click="workoutsHandler">Workouts</button>
     </div>
 
     <button @click="closeHandler" v-if="mode !== 'none'">X</button>
@@ -62,6 +63,11 @@ export default {
     mode: 'none' //used to determine if we display save or load divs
   }),
   methods: {
+    workoutsHandler() {
+      this.mode = 'workouts'
+      this.workoutName = ''
+      this.workoutRef.classList.add('active')
+    },
     saveHandler() {
       this.mode = 'save'
       this.workoutName = ''
