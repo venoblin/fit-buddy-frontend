@@ -3,7 +3,7 @@
     <div class="inputs" v-if="mode === 'none'">
       <!-- <button @click="saveHandler">Save Workout</button>
       <button @click="loadHandler">Load Workout</button> -->
-      <button @click="workoutsHandler">Workouts</button>
+      <button @click="workoutsHandler">My Workouts</button>
     </div>
 
     <button @click="closeHandler" v-if="mode !== 'none'">X</button>
