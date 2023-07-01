@@ -29,7 +29,7 @@
     <button>Save</button>
   </form>
 
-  <div class="links">
+  <div class="inputs">
     <button @click="toggleInput">Edit Name</button>
     <button class="danger" @click="deleteUser">Delete User</button>
   </div> 
@@ -70,4 +70,10 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.inputs {
+  button {
+    margin: 0 0.5rem;
+  }
+}
+</style>

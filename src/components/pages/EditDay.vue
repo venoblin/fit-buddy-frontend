@@ -3,7 +3,7 @@
 
   <WorkOuts :exercises="daysExercises" :loadWorkout="loadWorkout" />
 
-  <div>
+  <div class="exercises">
     <div v-if="daysExercises.length">
       <DayExercise
       v-for="e in daysExercises"
@@ -19,9 +19,10 @@
     <div v-else>
       <p>Rest Day</p>
     </div>
+
+    <ExerciseFinder />
   </div>
 
-  <ExerciseFinder />
 </template>
 
 <script>
@@ -68,4 +69,18 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+@import '@/assets/styles/global.scss';
+
+.exercises {
+  border: 1px solid $grey;
+  border-radius: 1rem;
+  padding: 1rem 1rem 2rem 1rem;
+  width: fit-content;
+  margin: 2rem auto 0 auto;
+
+  .day-exercise:last-of-type {
+    border-bottom: none;
+  }
+}
+</style>
