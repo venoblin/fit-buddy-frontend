@@ -5,6 +5,8 @@
 </template>
 
 <script>
+import { storeToRefs } from 'pinia';
+import { useUserStore } from './stores/user';
 import NavBar from './components/NavBar.vue';
 import FooterBar from './components/FooterBar.vue';
 
@@ -13,7 +15,10 @@ export default {
   components: {
     NavBar,
     FooterBar
-  }
+  },
+  data: () => ({
+    user: storeToRefs(useUserStore()).user
+  })
 }
 </script>
 
