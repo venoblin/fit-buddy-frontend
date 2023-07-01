@@ -8,6 +8,24 @@
 
     <button @click="closeHandler" v-if="mode !== 'none'">X</button>
 
+    <div class="workouts" v-if="mode === 'workouts'">
+      <h2>Load Workout</h2>
+
+      <div v-if="workouts.length">
+        <WorkOutsCard
+        v-for="workout in workouts"
+        :key="workout.name"
+        :workout="workout"
+        :deleteWorkout="deleteWorkout"
+        :loadWorkout="loadWorkout"
+        :closeHandler="closeHandler" />
+      </div>
+
+      <div v-else>
+        <p>No saved workouts!</p>
+      </div>
+    </div>
+
     <div class="save" v-if="mode === 'save'">
       <h2>Save Workout</h2>
 
@@ -24,24 +42,6 @@
 
         <button>Save</button>
       </form>
-    </div>
-
-    <div class="load" v-if="mode === 'load'">
-      <h2>Load Workout</h2>
-
-      <div v-if="workouts.length">
-        <WorkOutsCard
-        v-for="workout in workouts"
-        :key="workout.name"
-        :workout="workout"
-        :deleteWorkout="deleteWorkout"
-        :loadWorkout="loadWorkout"
-        :closeHandler="closeHandler" />
-      </div>
-
-      <div v-else>
-        <p>No saved workouts!</p>
-      </div>
     </div>
   </div>
 </template>
