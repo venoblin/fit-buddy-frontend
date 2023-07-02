@@ -6,18 +6,6 @@
       <button @click="toggleInput">Edit Name</button>
       <button class="danger" @click="deleteUser">Delete User</button>
     </div>
-    
-    <div class="favorites">
-      <h2>Favorite Exercises</h2>
-
-      <div v-if="favorites.length">
-        <h3>Favorites Here</h3>
-      </div>
-
-      <div v-else>
-        <p>You have no favorites!</p>
-      </div>
-    </div>
   </div>
 
   <form v-if="isEditing" @submit="submitHandler">
@@ -46,7 +34,6 @@ export default {
   name: 'UserProfile',
   data: () => ({
     user: useUserStore().user,
-    favorites: useUserStore().favoritesArr,
     isEditing: false
   }),
   methods: {
