@@ -37,7 +37,7 @@
 ## About The Project
 
 <p align="center">
-  <img src="project-info/gitbuddy-demo.gif" width="650" />
+  <img src="project-info/fitbuddy-demo.gif" width="650" />
 </p>
 
 <p align="center">
