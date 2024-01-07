@@ -36,15 +36,16 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
+<p align="center">
+  <img src="project-info/gitbuddy-demo.gif" width="650" />
+</p>
 
 <p align="center">
   <img src="project-info/screenshot01.png" width="650" />
 </p>
+
 <p align="center">
   <img src="project-info/screenshot02.png" width="650" />
-</p>
-<p align="center">
-  <img src="project-info/screenshot03.png" width="650" />
 </p>
 
 Fit Buddy, a web app meticulously crafted for scheduling and organizing personalized workout routines. Developed using Vue and SCSS, the application's intuitive home screen provides a clear daily overview of your workout schedule. Elevate your fitness experience by seamlessly planning and tracking your workouts, making Fit Buddy the perfect companion for your health and wellness goals.
