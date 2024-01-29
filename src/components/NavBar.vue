@@ -1,9 +1,8 @@
 <template>
   <nav>
-    <p class="logo">Fit Buddy</p>
+    <RouterLink class="logo" to="/">Fit Buddy</RouterLink>
 
     <div v-if="user">
-      <RouterLink class="link" to="/">Home</RouterLink>
       <RouterLink class="link" to="/profile">Profile</RouterLink>
     </div>
   </nav>
