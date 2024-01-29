@@ -106,11 +106,13 @@ button {
 
 .logo {
   margin: 0;
-  padding: 0.5rem;
+  padding: 0.25rem;
   font-size: 1.25em;
   color: $green;
   border-radius: 5px;
   font-family: 'Koulen', cursive;
+  text-decoration: none;
+  border: 2px solid $green;
 }
 
 input {
