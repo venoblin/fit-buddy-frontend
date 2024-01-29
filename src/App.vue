@@ -113,6 +113,11 @@ button {
   font-family: 'Koulen', cursive;
   text-decoration: none;
   border: 2px solid $green;
+
+  &:hover {
+    background-color: $green;
+    color: $white;
+  }
 }
 
 input {
