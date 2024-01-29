@@ -6,13 +6,13 @@
   <div class="exercises">
     <div v-if="daysExercises.length">
       <DayExercise
-      v-for="e in daysExercises"
-      :key="e.id"
-      :exercise="e"
-      :editMode="true"
-      :deleteExercise="deleteExercise"
-      :editExercise="editExercise"
-      :day="day"
+        v-for="e in daysExercises"
+        :key="e.id"
+        :exercise="e"
+        :editMode="true"
+        :deleteExercise="deleteExercise"
+        :editExercise="editExercise"
+        :day="day"
       />
     </div>
 

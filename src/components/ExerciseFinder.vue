@@ -123,8 +123,8 @@ export default {
   justify-content: center;
   flex-wrap: wrap;
   -webkit-box-shadow: 0px 15px 22px -19px rgba(50,63,71,1);
--moz-box-shadow: 0px 15px 22px -19px rgba(50,63,71,1);
-box-shadow: 0px 15px 22px -19px rgba(50,63,71,1);
+  -moz-box-shadow: 0px 15px 22px -19px rgba(50,63,71,1);
+  box-shadow: 0px 15px 22px -19px rgba(50,63,71,1);
 }
 
 .add-exercises-btn {
