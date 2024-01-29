@@ -106,7 +106,7 @@ button {
 
 .logo {
   margin: 0;
-  padding: 0.25rem;
+  padding: 0.1rem 0.25rem;
   font-size: 1.25em;
   color: $green;
   border-radius: 5px;
