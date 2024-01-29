@@ -113,6 +113,7 @@ button {
   font-family: 'Koulen', cursive;
   text-decoration: none;
   border: 2px solid $green;
+  transition: background-color 0.3s ease-in;
 
   &:hover {
     background-color: $green;
