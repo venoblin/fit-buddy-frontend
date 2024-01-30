@@ -5,10 +5,10 @@
     
     <div v-if="todaysExercises.length">
       <DayExercise
-      v-for="e in todaysExercises"
-      :key="e.id"
-      :exercise="e"
-      :editMode="false"
+        v-for="e in todaysExercises"
+        :key="e.id"
+        :exercise="e"
+        :editMode="false"
       />
     </div>
 
