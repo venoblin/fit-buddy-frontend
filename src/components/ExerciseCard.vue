@@ -88,7 +88,7 @@ export default {
     sets: 1,
     reps: 1,
     weight: 10,
-    duration: 15
+    duration: 15,
   }),
   methods: {
     clickInstHandler() {
@@ -100,33 +100,26 @@ export default {
     },
     submitHandler(evt) {
       evt.preventDefault()
-
-      let e = null
-      if (this.exercise.type === 'cardio') {
-        e = {
-          id: uuid(),
-          name: this.exercise.name,
-          type: this.exercise.type,
-          muscle: this.exercise.muscle,
-          equipment: this.exercise.equipment,
-          instructions: this.exercise.instructions,
-          duration: this.duration
-        }
-      } else {
-        e = {
-          id: uuid(),
-          name: this.exercise.name,
-          type: this.exercise.type,
-          muscle: this.exercise.muscle,
-          equipment: this.exercise.equipment,
-          instructions: this.exercise.instructions,
-          sets: this.sets,
-          reps: this.reps,
-          weight: this.weight
-        }
+      const baseExercise = {
+        id: uuid(),
+        name: this.exercise.name,
+        type: this.exercise.type,
+        muscle: this.exercise.muscle,
+        equipment: this.exercise.equipment,
+        instructions: this.exercise.instructions,
+        isDone: false
       }
 
-      useRoutineStore().addExercise(this.day, e)
+      if (this.exercise.type === 'cardio') {
+        baseExercise.duration = this.duration
+      } else {
+        baseExercise.sets = this.sets
+        baseExercise.reps = this.reps
+        baseExercise.weight = this.weight
+        
+      }
+
+      useRoutineStore().addExercise(this.day, baseExercise)
       this.resetExercises()
     },
     handleChange(evt) {
