@@ -7,13 +7,13 @@
     <form @submit="searchHandler">
       <label for="search" class="hide">Search</label>
       <input 
-      class="big-input"
-      type="search"
-      name="search"
-      id="search"
-      placeholder="Search by name"
-      :value="searchQuery"
-      @input="changeHandler"
+        class="big-input"
+        type="search"
+        name="search"
+        id="search"
+        placeholder="Search by name"
+        :value="searchQuery"
+        @input="changeHandler"
       />
     
       <button>Search</button>
@@ -21,18 +21,20 @@
 
     <div class="type-container">
       <TypeCard 
-      v-for="typeName in types" 
-      :key="typeName" 
-      :typeName="typeName"
-      @click="typeClickHandler(typeName)" />
+        v-for="typeName in types" 
+        :key="typeName" 
+        :typeName="typeName"
+        @click="typeClickHandler(typeName)" 
+      />
     </div>
 
     <div v-if="exercises" class="exercises">
       <ExerciseCard 
-      v-for="e in exercises" 
-      :key="e.name" 
-      :exercise="e"
-      :resetExercises="resetExercises" />
+        v-for="e in exercises" 
+        :key="e.name" 
+        :exercise="e"
+        :resetExercises="resetExercises" 
+      />
     </div>
   </div>
 </template>

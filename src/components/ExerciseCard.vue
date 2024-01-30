@@ -8,12 +8,12 @@
         <div>
           <label for="duration">Duration(minutes):</label>
           <input 
-          type="number"
-          name="duration"
-          id="duration"
-          min="1"
-          :value="duration"
-          @change="handleChange"
+            type="number"
+            name="duration"
+            id="duration"
+            min="1"
+            :value="duration"
+            @change="handleChange"
           />
         </div>
 
@@ -24,36 +24,36 @@
         <div>
           <label for="sets">Sets:</label>
           <input 
-          type="number"
-          name="sets"
-          id="sets"
-          min="1"
-          :value="sets"
-          @change="handleChange"
+            type="number"
+            name="sets"
+            id="sets"
+            min="1"
+            :value="sets"
+            @change="handleChange"
           />
         </div>
 
         <div>
           <label for="reps">Reps:</label>
           <input 
-          type="number"
-          name="reps"
-          id="reps"
-          min="1"
-          :value="reps"
-          @change="handleChange"
+            type="number"
+            name="reps"
+            id="reps"
+            min="1"
+            :value="reps"
+            @change="handleChange"
           />
         </div>
 
         <div>
           <label for="weight">Weight(LBS):</label>
           <input 
-          type="number"
-          name="weight"
-          id="weight"
-          min="1"
-          :value="weight"
-          @change="handleChange"
+            type="number"
+            name="weight"
+            id="weight"
+            min="1"
+            :value="weight"
+            @change="handleChange"
           />
         </div>
 
@@ -88,7 +88,7 @@ export default {
     sets: 1,
     reps: 1,
     weight: 10,
-    duration: 15
+    duration: 15,
   }),
   methods: {
     clickInstHandler() {
@@ -100,33 +100,26 @@ export default {
     },
     submitHandler(evt) {
       evt.preventDefault()
-
-      let e = null
-      if (this.exercise.type === 'cardio') {
-        e = {
-          id: uuid(),
-          name: this.exercise.name,
-          type: this.exercise.type,
-          muscle: this.exercise.muscle,
-          equipment: this.exercise.equipment,
-          instructions: this.exercise.instructions,
-          duration: this.duration
-        }
-      } else {
-        e = {
-          id: uuid(),
-          name: this.exercise.name,
-          type: this.exercise.type,
-          muscle: this.exercise.muscle,
-          equipment: this.exercise.equipment,
-          instructions: this.exercise.instructions,
-          sets: this.sets,
-          reps: this.reps,
-          weight: this.weight
-        }
+      const baseExercise = {
+        id: uuid(),
+        name: this.exercise.name,
+        type: this.exercise.type,
+        muscle: this.exercise.muscle,
+        equipment: this.exercise.equipment,
+        instructions: this.exercise.instructions,
+        isDone: false
       }
 
-      useRoutineStore().addExercise(this.day, e)
+      if (this.exercise.type === 'cardio') {
+        baseExercise.duration = this.duration
+      } else {
+        baseExercise.sets = this.sets
+        baseExercise.reps = this.reps
+        baseExercise.weight = this.weight
+        
+      }
+
+      useRoutineStore().addExercise(this.day, baseExercise)
       this.resetExercises()
     },
     handleChange(evt) {
