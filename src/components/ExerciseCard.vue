@@ -8,12 +8,12 @@
         <div>
           <label for="duration">Duration(minutes):</label>
           <input 
-          type="number"
-          name="duration"
-          id="duration"
-          min="1"
-          :value="duration"
-          @change="handleChange"
+            type="number"
+            name="duration"
+            id="duration"
+            min="1"
+            :value="duration"
+            @change="handleChange"
           />
         </div>
 
