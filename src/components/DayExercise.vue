@@ -34,12 +34,12 @@
         <div>
           <label for="duration">Duration(minutes):</label>
           <input 
-          type="number"
-          name="duration"
-          id="duration"
-          min="1"
-          :value="duration"
-          @change="handleChange"
+            type="number"
+            name="duration"
+            id="duration"
+            min="1"
+            :value="duration"
+            @change="handleChange"
           />
         </div>
 
@@ -50,36 +50,36 @@
         <div>
           <label for="sets">Sets:</label>
           <input 
-          type="number"
-          name="sets"
-          id="sets"
-          min="1"
-          :value="sets"
-          @change="handleChange"
+            type="number"
+            name="sets"
+            id="sets"
+            min="1"
+            :value="sets"
+            @change="handleChange"
           />
         </div>
 
         <div>
           <label for="reps">Reps:</label>
           <input 
-          type="number"
-          name="reps"
-          id="reps"
-          min="1"
-          :value="reps"
-          @change="handleChange"
+            type="number"
+            name="reps"
+            id="reps"
+            min="1"
+            :value="reps"
+            @change="handleChange"
           />
         </div>
 
         <div>
           <label for="weight">Weight(LBS):</label>
           <input 
-          type="number"
-          name="weight"
-          id="weight"
-          min="1"
-          :value="weight"
-          @change="handleChange"
+            type="number"
+            name="weight"
+            id="weight"
+            min="1"
+            :value="weight"
+            @change="handleChange"
           />
         </div>
 
