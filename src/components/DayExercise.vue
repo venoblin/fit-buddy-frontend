@@ -184,7 +184,10 @@ export default {
       this.reps = this.exercise.reps
       this.weight = this.exercise.weight
     }
+    
+    this.isDone = this.exercise.isDone
   }
+
 }
 </script>
 
