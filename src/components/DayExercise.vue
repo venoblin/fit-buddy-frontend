@@ -1,5 +1,5 @@
 <template>
-  <div class="day-exercise capitalize" :class="{ done: isDone }">
+  <div class="day-exercise capitalize" :class="{ done: isDone && !editMode }">
     <div class="top">
       <div class="first">
         <div class="up-down-inputs" v-if="editMode && !showForm">
