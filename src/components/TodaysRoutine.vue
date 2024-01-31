@@ -9,6 +9,7 @@
         :key="e.id"
         :exercise="e"
         :editMode="false"
+        :day="day"
       />
     </div>
 
@@ -32,7 +33,8 @@ export default {
   data: () => ({
     routine: useRoutineStore().routineArr,
     user: useUserStore().user,
-    todaysExercises: []
+    todaysExercises: [],
+    day: getTodaysDate().dayName
   }),
   mounted: function(){
     this.todaysExercises = this.routine[getTodaysDate().dayIndex].exercises

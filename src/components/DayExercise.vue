@@ -110,6 +110,7 @@ export default {
   }),
   methods: {
     doneToggle() {
+      useRoutineStore().editExercise(this.day, this.exercise, {isDone: !this.isDone})
       this.isDone = !this.isDone
     },
     findExercisePosition() {
@@ -184,7 +185,7 @@ export default {
       this.reps = this.exercise.reps
       this.weight = this.exercise.weight
     }
-    
+
     this.isDone = this.exercise.isDone
   }
 
