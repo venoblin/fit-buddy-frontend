@@ -1,39 +1,41 @@
 import { defineStore } from 'pinia'
 
+const routineLayout = [
+  {
+    name: 'sun',
+    exercises: []
+  },
+  {
+    name: 'mon',
+    exercises: []
+  },
+  {
+    name: 'tue',
+    exercises: []
+  },
+  {
+    name: 'wed',
+    exercises: []
+  },
+  {
+    name: 'thu',
+    exercises: []
+  },
+  {
+    name: 'fri',
+    exercises: []
+  },
+  {
+    name: 'sat',
+    exercises: []
+  }
+]
+
 export const useRoutineStore = defineStore('routine', {
   state: () => ({
     routineArr: JSON.parse(
       window.localStorage.getItem('routine') ||
-        JSON.stringify([
-          {
-            name: 'sun',
-            exercises: []
-          },
-          {
-            name: 'mon',
-            exercises: []
-          },
-          {
-            name: 'tue',
-            exercises: []
-          },
-          {
-            name: 'wed',
-            exercises: []
-          },
-          {
-            name: 'thu',
-            exercises: []
-          },
-          {
-            name: 'fri',
-            exercises: []
-          },
-          {
-            name: 'sat',
-            exercises: []
-          }
-        ])
+        JSON.stringify([...routineLayout])
     )
   }),
   actions: {
@@ -85,36 +87,7 @@ export const useRoutineStore = defineStore('routine', {
       return this.routineArr
     },
     resetRoutine() {
-      this.routineArr = [
-        {
-          name: 'sun',
-          exercises: []
-        },
-        {
-          name: 'mon',
-          exercises: []
-        },
-        {
-          name: 'tue',
-          exercises: []
-        },
-        {
-          name: 'wed',
-          exercises: []
-        },
-        {
-          name: 'thu',
-          exercises: []
-        },
-        {
-          name: 'fri',
-          exercises: []
-        },
-        {
-          name: 'sat',
-          exercises: []
-        }
-      ]
+      this.routineArr = [...routineLayout]
     }
   }
 })
