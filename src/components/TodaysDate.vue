@@ -4,6 +4,7 @@
 
 <script>
 import { getTodaysDate } from '@/utils';
+import { useRoutineStore } from '@/stores/routine';
 
 export default {
   name: 'TodaysDate',
@@ -11,7 +12,7 @@ export default {
     today: getTodaysDate()
   }),
   mounted: function() {
-
+    const exercises = useRoutineStore().exercises
   }
 }
 

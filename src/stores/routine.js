@@ -79,6 +79,15 @@ export const useRoutineStore = defineStore('routine', {
 
       window.localStorage.setItem('routine', JSON.stringify(this.routineArr))
     },
+    removeIsDoneDayExercises(dayName) {
+      this.routineArr.forEach((r) => {
+        if (r.name == dayName) {
+          for (let e of r.exercises) {
+            e.isDone = false
+          }
+        }
+      })
+    },
     replaceExercises(dayName, newExercises) {
       this.routineArr.forEach((routine) => {
         if (routine.name === dayName) routine.exercises = newExercises
