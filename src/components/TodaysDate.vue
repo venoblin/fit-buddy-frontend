@@ -9,7 +9,10 @@ export default {
   name: 'TodaysDate',
   data: () => ({
     today: getTodaysDate()
-  })
+  }),
+  mounted: function() {
+
+  }
 }
 
 </script>
