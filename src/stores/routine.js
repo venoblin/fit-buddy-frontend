@@ -81,7 +81,7 @@ export const useRoutineStore = defineStore('routine', {
     },
     removeIsDoneDayExercises(dayName) {
       this.routineArr.forEach((r) => {
-        if (r.name == dayName) {
+        if (r.name == dayName && r.exercises.length) {
           for (let e of r.exercises) {
             e.isDone = false
           }
