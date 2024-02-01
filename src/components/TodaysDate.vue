@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import { getTodaysDate } from '@/utils';
+import { getTodaysDate, daysArr } from '@/utils';
 import { useRoutineStore } from '@/stores/routine';
 
 export default {
@@ -12,7 +12,7 @@ export default {
     today: getTodaysDate()
   }),
   mounted: function() {
-    const exercises = useRoutineStore().exercises
+    useRoutineStore().removeIsDoneDayExercises(daysArr[this.today.dayIndex - 1])
   }
 }
 
