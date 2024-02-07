@@ -23,6 +23,10 @@
 
     <button>Save</button>
   </form>
+
+  <div class="workouts">
+    <h2>Workouts</h2>
+  </div>
 </template>
 
 <script>
