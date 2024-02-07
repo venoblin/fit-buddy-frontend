@@ -26,6 +26,14 @@
 
   <div class="workouts">
     <h2>Workouts</h2>
+
+    <div v-if="workouts.length">
+      <p>Workouts...</p>
+    </div>
+    <div v-else>
+      <p>No workouts!</p>
+    </div>
+
   </div>
 </template>
 
@@ -38,7 +46,8 @@ export default {
   name: 'UserProfile',
   data: () => ({
     user: useUserStore().user,
-    isEditing: false
+    isEditing: false,
+    workouts: useWorkoutsStore().workoutsArr
   }),
   methods: {
     deleteUser() {
