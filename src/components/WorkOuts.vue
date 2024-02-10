@@ -22,8 +22,6 @@
       <div v-else>
         <p>No saved workouts!</p>
       </div>
-
-      <button class="save-btn" @click="saveHandler">Save Workout</button>
     </div>
 
     <div class="save" v-if="mode === 'save'">
