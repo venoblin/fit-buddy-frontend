@@ -1,7 +1,7 @@
 <template>
   <button class="add-exercises-btn" v-if="!findMode" @click="findOpenHandler">Add Exercises</button>
   
-  <div class="finder" ref="finder">
+  <div v-bind:class="this.findMode ? 'show finder' : 'finder'">
     <button class="close-btn" @click="findCloseHandler">X</button>
       
     <form @submit="searchHandler">
@@ -63,11 +63,9 @@ export default {
   }),
   methods: {
     findOpenHandler() {
-      this.$refs.finder.classList.toggle('show')
       this.findMode = true
     },
     findCloseHandler() {
-      this.$refs.finder.classList.toggle('show')
       this.findMode = false
       this.exercises = null
       this.searchQuery = ''
