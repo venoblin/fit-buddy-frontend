@@ -28,6 +28,8 @@
       />
     </div>
 
+    <LoadingPopUp />
+
     <div v-if="exercises && findMode" class="exercises">
       <ExerciseCard 
         v-for="e in exercises" 
@@ -40,15 +42,17 @@
 </template>
 
 <script>
-import { typesArr } from '@/utils';
-import { GetExercises } from '@/services/api';
-import TypeCard from './TypeCard.vue';
-import ExerciseCard from './ExerciseCard.vue';
+import { typesArr } from '@/utils'
+import { GetExercises } from '@/services/api'
+import TypeCard from './TypeCard.vue'
+import LoadingPopUp from './LoadingPopUp.vue'
+import ExerciseCard from './ExerciseCard.vue'
 
 export default {
   name: 'ExerciseFinder',
   components: {
     TypeCard,
+    LoadingPopUp,
     ExerciseCard
   },
   data: () => ({
