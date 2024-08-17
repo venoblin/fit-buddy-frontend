@@ -1,7 +1,7 @@
 <template>
   <button class="add-exercises-btn" v-if="!findMode" @click="findOpenHandler">Add Exercises</button>
   
-  <div v-bind:class="this.findMode ? 'show finder' : 'finder'">
+  <div v-if="findMode" class="finder">
     <button class="close-btn" @click="findCloseHandler">X</button>
       
     <form @submit="searchHandler">
@@ -77,9 +77,7 @@ export default {
       this.exercises = null
       this.loading = true
       this.exercises = await GetExercises(query)
-      if (this.exercises) {
-        this.loading = false
-      }
+      this.loading = false
       this.searchQuery = ''
     },
     async searchHandler(evt) {
@@ -99,22 +97,17 @@ export default {
 .finder {
   max-width: 700px;
   padding-top: 2.5rem;
-  position: fixed;
+  position: absolute;
   margin: 0 auto;
-  bottom: 0;
   left: 0;
+  right: 0;
+  bottom: 0;
   border-radius: 1rem 1rem 0 0;
   -webkit-box-shadow: 0px 1px 22px -7px rgba(50,63,71,1);
   -moz-box-shadow: 0px 1px 22px -7px rgba(50,63,71,1);
   box-shadow: 0px 1px 22px -7px rgba(50,63,71,1);
-  transform: translateX(-2000px);
   background-color: $white;
   transition: transform 0.3s ease;
-
-  &.show {
-    right: 0;
-    transform: translateX(0);
-  }
 }
 
 .exercises {
