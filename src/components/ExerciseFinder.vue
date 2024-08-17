@@ -28,7 +28,7 @@
       />
     </div>
 
-    <div v-if="exercises" class="exercises">
+    <div v-if="exercises && findMode" class="exercises">
       <ExerciseCard 
         v-for="e in exercises" 
         :key="e.name" 
