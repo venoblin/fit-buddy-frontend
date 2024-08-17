@@ -120,6 +120,7 @@ export default {
       }
 
       useRoutineStore().addExercise(this.day, baseExercise)
+      this.clickAddHandler()
       this.resetExercises()
     },
     handleChange(evt) {
