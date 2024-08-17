@@ -28,9 +28,8 @@
       />
     </div>
 
-    <LoadingPopUp />
-
-    <div v-if="exercises && findMode" class="exercises">
+    <LoadingPopUp v-if="!exercises && loading" />
+    <div v-else-if="exercises" class="exercises">
       <ExerciseCard 
         v-for="e in exercises" 
         :key="e.name" 
@@ -59,7 +58,8 @@ export default {
     types: typesArr,
     searchQuery: '',
     exercises: null,
-    findMode: false
+    findMode: false,
+    loading: false
   }),
   methods: {
     findOpenHandler() {
@@ -72,21 +72,24 @@ export default {
       this.exercises = null
       this.searchQuery = ''
     },
-    resetExercises() {
-      this.exercises = null
-      this.searchQuery = ''
-    },
     changeHandler(evt) {
       this.searchQuery = evt.target.value
     },
-    async searchHandler(evt) {
-      evt.preventDefault()
-      this.exercises = await GetExercises({name: this.searchQuery})
+    async load(query) {
+      this.exercises = null
+      this.loading = true
+      this.exercises = await GetExercises(query)
+      if (this.exercises) {
+        this.loading = false
+      }
       this.searchQuery = ''
     },
+    async searchHandler(evt) {
+      evt.preventDefault()
+      await this.load({name: this.searchQuery})
+    },
     async typeClickHandler(typeName) {
-      this.exercises = await GetExercises({muscle: typeName})
-      this.searchQuery = ''
+      await this.load({muscle: typeName})
     }
   }
 }
