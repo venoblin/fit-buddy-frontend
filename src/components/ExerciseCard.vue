@@ -116,7 +116,6 @@ export default {
         baseExercise.sets = this.sets
         baseExercise.reps = this.reps
         baseExercise.weight = this.weight
-        
       }
 
       useRoutineStore().addExercise(this.day, baseExercise)
