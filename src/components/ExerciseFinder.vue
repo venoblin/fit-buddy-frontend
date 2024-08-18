@@ -73,6 +73,10 @@ export default {
     changeHandler(evt) {
       this.searchQuery = evt.target.value
     },
+    resetExercises() {
+      this.exercises = null
+      this.searchQuery = ''
+    },
     async load(query) {
       this.exercises = null
       this.loading = true
